@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dadiso Home and Office Projects - Built-in Cupboards, Kitchens & More | Zimbabwe</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden;width:100%}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+:root{--green:#1a6b3c;--green2:#22883e;--dark:#1a1a1a;--light:#f7f8f5;--border:#e8ebe5;--text:#555;--muted:#888}
+
+/* TOPBAR */
+.topbar{background:#fff;border-bottom:1px solid var(--border);padding:10px 0}
+.topbar .inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.topbar-left{display:flex;gap:8px}
+.tb-icon{width:40px;height:40px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:800;transition:background .2s}
+.tb-icon:hover{background:var(--dark)}
+.topbar-right{display:flex;gap:32px}
+.tb-item{display:flex;align-items:center;gap:12px}
+.tb-circle{width:38px;height:38px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.tb-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;display:block}
+.tb-val{font-size:13px;font-weight:600;color:#111}
+.tb-val a{color:#111}
+.tb-val a:hover{color:var(--green)}
+
+/* NAV */
+nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 0 0 32px;display:flex;align-items:center;height:72px}
+.logo-wrap{display:flex;align-items:center;gap:12px;margin-right:auto}
+.logo-icon{width:52px;height:52px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-text strong{font-size:17px;font-weight:900;color:#111;text-transform:uppercase;letter-spacing:.5px;display:block;line-height:1.1}
+.logo-text span{font-size:11px;color:var(--green);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.nav-menu{display:flex;align-items:center;list-style:none}
+.nav-menu>li{position:relative}
+.nav-menu>li>a{display:flex;align-items:center;gap:4px;padding:0 16px;height:72px;font-size:14px;font-weight:500;color:#222;transition:color .2s;white-space:nowrap}
+.nav-menu>li>a:hover{color:var(--green)}
+.nav-menu>li.hd>a::after{content:' ▾';font-size:10px}
+.drop{position:absolute;top:100%;left:0;background:#fff;min-width:210px;border:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.1);opacity:0;pointer-events:none;transform:translateY(6px);transition:all .2s;z-index:200}
+.nav-menu>li:hover .drop{opacity:1;pointer-events:all;transform:translateY(0)}
+.drop a{display:block;padding:11px 18px;font-size:13px;color:#444;border-bottom:1px solid var(--border);transition:all .15s}
+.drop a:last-child{border-bottom:none}
+.drop a:hover{background:var(--light);color:var(--green);padding-left:24px}
+.nav-cta{background:var(--green);color:#fff;padding:0 32px;height:72px;display:flex;align-items:center;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-left:16px;transition:background .2s;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{background:var(--dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;margin-left:auto;margin-right:16px}
+.hamburger span{width:24px;height:2px;background:#111;transition:all .25s;display:block}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;background:#fff;border-top:1px solid var(--border);overflow:hidden;max-height:0;transition:max-height .35s ease}
+.mob-menu.open{max-height:520px}
+.mob-menu a{display:block;padding:13px 28px;font-size:14px;font-weight:500;color:#333;border-bottom:1px solid var(--border);transition:all .15s}
+.mob-menu a:hover{background:var(--light);color:var(--green)}
+.mob-menu .mob-cta{background:var(--green);color:#fff;font-weight:700;text-align:center}
+
+/* WRAP */
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+
+/* HERO */
+#hero{position:relative;min-height:92vh;background:url('office.jpg') center/cover no-repeat;display:flex;align-items:stretch;width:100%}
+#hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.5)}
+.hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:0 32px;width:100%;display:flex;align-items:center;justify-content:flex-end}
+.hero-form{background:var(--green);color:#fff;width:400px;max-width:100%;padding:48px 40px;flex-shrink:0}
+.hero-form h2{font-size:32px;font-weight:900;margin-bottom:10px}
+.hero-form p{font-size:14px;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:24px}
+.hf{width:100%;padding:14px 16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-family:'Inter',sans-serif;font-size:14px;margin-bottom:14px;outline:none;transition:border-color .2s}
+.hf::placeholder{color:rgba(255,255,255,.55)}
+.hf:focus{border-color:rgba(255,255,255,.8)}
+.hf option{background:#1a6b3c;color:#fff}
+.hf-btn{width:100%;padding:16px;background:#fff;color:var(--green);font-family:'Inter',sans-serif;font-weight:800;font-size:14px;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;transition:background .2s}
+.hf-btn:hover{background:#e8f5ee}
+
+/* SECTIONS */
+section{padding:88px 0}
+.sec-tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--green);margin-bottom:8px}
+h2.sh{font-size:clamp(26px,3.2vw,40px);font-weight:900;color:#111;line-height:1.15}
+h2.sc{text-align:center}
+p.sp{font-size:16px;color:var(--text);line-height:1.75;margin-top:14px}
+.btn-green{display:inline-block;background:var(--green);color:#fff;padding:16px 36px;font-weight:700;font-size:14px;border:none;cursor:pointer;transition:background .2s}
+.btn-green:hover{background:var(--dark)}
+
+/* ABOUT */
+#about{background:#fff}
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.about-img{width:100%;aspect-ratio:4/3.2;object-fit:cover}
+.about-txt p{font-size:16px;color:var(--text);line-height:1.8;margin:20px 0 30px}
+.about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.about-tag{background:var(--light);border:1px solid var(--border);padding:7px 16px;font-size:13px;font-weight:600;color:var(--green);border-radius:2px}
+
+/* SERVICES */
+#services{background:var(--light)}
+.srv-lay{display:grid;grid-template-columns:260px 1fr;gap:64px;align-items:start}
+.srv-lft h2{font-size:32px;font-weight:900;color:#111;margin-bottom:16px}
+.srv-lft p{font-size:15px;color:var(--text);line-height:1.7;margin-bottom:28px}
+.srv-g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.srv-c{background:#fff;border:1px solid var(--border);overflow:hidden;transition:box-shadow .2s,border-color .2s}
+.srv-c:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:var(--green)}
+.srv-cb{padding:24px}
+.srv-icon{width:48px;height:48px;background:var(--light);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.srv-icon svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:2}
+.srv-cb h3{font-size:17px;font-weight:800;color:#111;margin-bottom:10px}
+.srv-cb p{font-size:14px;color:var(--text);line-height:1.65}
+
+/* WHY */
+#why{background:#fff}
+.why-h{font-size:clamp(24px,3vw,38px);font-weight:900;color:#111;text-align:center;margin-bottom:52px}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.why-c{border:1px solid var(--border);padding:38px 28px;text-align:center;transition:box-shadow .2s}
+.why-c:hover{box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.why-c svg{margin:0 auto 18px;display:block}
+.why-c h3{font-size:20px;font-weight:800;color:#111;margin-bottom:14px}
+.why-c p{font-size:14px;color:var(--text);line-height:1.7}
+
+/* STRENGTH */
+#strength{background:var(--light)}
+.str-g{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.str-img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.str-txt h2{font-size:clamp(28px,3.5vw,44px);font-weight:900;color:#111;margin-bottom:18px}
+.str-txt p{font-size:16px;color:var(--text);line-height:1.8;margin-bottom:30px}
+
+/* GALLERY - fewer images, 3 col only */
+#gallery{background:#fff}
+.gal-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gal-i{overflow:hidden;cursor:pointer;position:relative;aspect-ratio:4/3}
+.gal-i img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block}
+.gal-i:hover img{transform:scale(1.05)}
+.gal-ov{position:absolute;inset:0;background:rgba(26,107,60,.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.gal-i:hover .gal-ov{opacity:1}
+.gal-ov svg{width:34px;height:34px;fill:#fff}
+
+/* PROJECTS */
+#projects{background:var(--light)}
+.proj-g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:38px}
+.proj-c img{width:100%;aspect-ratio:4/3.2;object-fit:cover;display:block}
+.proj-cap{background:var(--green);color:#fff;padding:18px 22px;font-size:16px;font-weight:700;text-align:center}
+
+/* EXPERTS */
+#experts{background:#fff}
+.exp-g{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.exp-l h2{font-size:clamp(22px,3vw,34px);font-weight:900;color:#111;margin-bottom:20px}
+.exp-contacts{display:flex;gap:36px;margin-bottom:30px;flex-wrap:wrap}
+.exp-ci{display:flex;align-items:center;gap:10px;font-size:15px;color:#111;font-weight:500}
+.exp-ci svg{width:18px;height:18px;fill:#111;flex-shrink:0}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--light)}
+.testi-s{overflow:hidden}
+.testi-tr{display:flex;transition:transform .45s ease}
+.testi-sl{min-width:100%}
+.testi-cd{max-width:700px;margin:0 auto;text-align:center}
+.testi-stars{color:var(--green);font-size:22px;margin-bottom:18px}
+.testi-qt{font-size:18px;color:#333;line-height:1.8;font-style:italic;margin-bottom:28px}
+.testi-au{display:flex;align-items:center;justify-content:center;gap:14px}
+.testi-av{width:50px;height:50px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.testi-nm{font-weight:700;font-size:15px;color:#111}
+.testi-rl{font-size:13px;color:var(--muted)}
+.testi-nav{display:flex;justify-content:center;gap:10px;margin-top:30px}
+.td{width:10px;height:10px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:background .2s}
+.td.act{background:var(--green)}
+.testi-arr{display:flex;justify-content:center;gap:12px;margin-top:14px}
+.ta{width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--border);font-size:18px;cursor:pointer;transition:all .2s}
+.ta:hover{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* CONTACT */
+#contact{padding:0}
+.cmap{width:100%;height:320px}
+.cmap iframe{width:100%;height:100%;border:none;display:block}
+.cbody{display:grid;grid-template-columns:1fr 400px}
+.cform{padding:60px 52px;background:#fff}
+.cform h2{font-size:30px;font-weight:900;color:#111;margin-bottom:28px}
+.cf{width:100%;padding:16px 18px;background:var(--light);border:1px solid var(--border);font-family:'Inter',sans-serif;font-size:14px;color:#111;margin-bottom:16px;outline:none;transition:border-color .2s}
+.cf:focus{border-color:var(--green)}
+.cf::placeholder{color:#bbb}
+textarea.cf{min-height:120px;resize:vertical}
+.cf-sbmt{background:var(--green);color:#fff;border:none;cursor:pointer;padding:16px 38px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;transition:background .2s}
+.cf-sbmt:hover{background:var(--dark)}
+.cf-ok{display:none;margin-top:14px;padding:12px 18px;background:#e8f5ee;border-left:4px solid var(--green);color:var(--green);font-size:14px;font-weight:600}
+.cf-ok.show{display:block}
+.cpanel{background:var(--green);color:#fff;padding:60px 44px}
+.cpanel h2{font-size:26px;font-weight:900;margin-bottom:36px}
+.ci{display:flex;gap:14px;align-items:flex-start;margin-bottom:26px}
+.ci-dot{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+.ci-txt{font-size:15px;color:rgba(255,255,255,.9);line-height:1.5}
+.ci-txt a{color:#fff}
+.ci-txt a:hover{text-decoration:underline}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.75);padding:60px 0 0}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
+.fb-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.fb p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.75}
+.fb-soc{display:flex;gap:10px;margin-top:20px}
+.fb-soc a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;transition:background .2s}
+.fb-soc a:hover{background:var(--green)}
+.fc h4{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1)}
+.fc ul{list-style:none}
+.fc ul li{margin-bottom:9px}
+.fc ul li a{font-size:14px;color:rgba(255,255,255,.6);transition:color .2s;display:flex;align-items:center;gap:6px}
+.fc ul li a::before{content:'›';color:var(--green2);font-size:16px}
+.fc ul li a:hover{color:#fff}
+.fn input{width:100%;padding:11px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:'Inter',sans-serif;font-size:14px;margin-bottom:10px;outline:none}
+.fn input::placeholder{color:rgba(255,255,255,.4)}
+.fn .btn-green{width:100%;text-align:center;padding:13px;display:block}
+.fbot{padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fbot p{font-size:13px;color:rgba(255,255,255,.45)}
+.fbot a{color:rgba(255,255,255,.6)}
+.fbot a:hover{color:#fff}
+.fbl{display:flex;gap:20px}
+.fbl a{font-size:13px;color:rgba(255,255,255,.45);transition:color .2s}
+.fbl a:hover{color:#fff}
+
+/* FLOAT */
+.floats{position:fixed;bottom:24px;left:20px;z-index:999;display:flex;flex-direction:column;gap:10px;align-items:center}
+.fl-btn{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s;text-decoration:none}
+.fl-btn:hover{transform:scale(1.1)}
+.fl-call,.fl-wa{background:#25d366}
+.fl-x{background:#111;color:#fff;font-size:16px;width:44px;height:44px}
+.btt{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);border:none;color:#fff;font-size:22px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.btt.show{opacity:1;pointer-events:all}
+.btt:hover{background:var(--dark)}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.lb.open{opacity:1;pointer-events:all}
+.lb img{max-width:90vw;max-height:88vh;object-fit:contain}
+.lb-x{position:fixed;top:18px;right:22px;background:none;border:none;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .fg{grid-template-columns:1fr 1fr}
+  .srv-g{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  .about-g,.str-g,.cbody{grid-template-columns:1fr}
+  .cpanel{padding:44px 30px}
+  .srv-lay{grid-template-columns:1fr}
+  .exp-g{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-menu{display:none}
+  .hamburger{display:flex}
+  .mob-menu{display:block}
+  .topbar-right{display:none}
+  section{padding:56px 0}
+  .why-g{grid-template-columns:1fr}
+  .gal-g{grid-template-columns:1fr 1fr}
+  .proj-g{grid-template-columns:1fr}
+  .srv-g{grid-template-columns:1fr}
+  .wrap{padding:0 16px}
+  .nav-inner{padding:0 0 0 16px}
+  .logo-text strong{font-size:14px}
+  .hero-inner{padding:0;justify-content:stretch;align-items:flex-end;min-height:92vh}
+  .hero-form{width:100%;max-width:100%;box-sizing:border-box}
+  .cform{padding:36px 24px}
+  .fg{grid-template-columns:1fr;gap:24px}
+  .fbot{flex-direction:column;text-align:center}
+  .topbar .inner{padding:0 16px}
+}
+@media(max-width:480px){
+  .gal-g{grid-template-columns:1fr}
+  .hero-form{padding:30px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="inner">
+    <div class="topbar-left">
+      <a href="https://facebook.com" target="_blank" class="tb-icon">f</a>
+      <a href="https://wa.me/263780000000" target="_blank" class="tb-icon">W</a>
+    </div>
+    <div class="topbar-right">
+      <div class="tb-item">
+        <div class="tb-circle"><svg viewBox="0 0 24 24" width="17" height="17" fill="#fff"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
+        <div><span class="tb-lbl">Let's Have A Talk</span><span class="tb-val"><a href="tel:+263780000000">+263 78 000 0000</a></span></div>
+      </div>
+      <div class="tb-item">
+        <div class="tb-circle"><svg viewBox="0 0 24 24" width="17" height="17" fill="#fff"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14" stroke="#fff" stroke-width="2" fill="none"/></svg></div>
+        <div><span class="tb-lbl">Our Business Hours</span><span class="tb-val">Mon – Sat: 8AM – 5PM</span></div>
+      </div>
+      <div class="tb-item">
+        <div class="tb-circle"><svg viewBox="0 0 24 24" width="17" height="17" fill="#fff"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <div><span class="tb-lbl">Email Us Now</span><span class="tb-val"><a href="mailto:info@dadisoprojects.co.zw">info@dadisoprojects.co.zw</a></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo-wrap">
+      <div class="logo-icon">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+          <rect x="2" y="16" width="12" height="14" fill="#fff"/>
+          <polygon points="8,4 2,16 14,16" fill="rgba(255,255,255,0.6)"/>
+          <rect x="16" y="10" width="14" height="20" fill="#fff"/>
+          <polygon points="23,2 16,10 30,10" fill="rgba(255,255,255,0.6)"/>
+          <rect x="5" y="20" width="4" height="5" fill="#1a6b3c"/>
+          <rect x="19" y="14" width="4" height="4" fill="#1a6b3c"/>
+          <rect x="24" y="14" width="4" height="4" fill="#1a6b3c"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <strong>Dadiso Projects</strong>
+        <span>Home &amp; Office Solutions</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li class="hd"><a href="#services">Services</a>
+        <div class="drop">
+          <a href="#services">Built-in Cupboards</a>
+          <a href="#services">Kitchen Fitting</a>
+          <a href="#services">Bedroom Furniture</a>
+          <a href="#services">Office Furniture</a>
+          <a href="#services">Partitions</a>
+          <a href="#services">Aluminium Works</a>
+        </div>
+      </li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#projects">Completed Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+    <a href="#contact" class="nav-cta">Request A Quote</a>
+  </div>
+  <div class="mob-menu" id="mobMenu">
+    <a href="#hero">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#projects">Completed Work</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="mob-cta">Request A Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding:0">
+  <div class="hero-inner">
+    <div class="hero-form">
+      <h2>Get A Free Quote!</h2>
+      <p>Drop a message — we will answer all enquiries within 24 hours on business days.</p>
+      <form onsubmit="hq(event)">
+        <input class="hf" type="text" placeholder="Full Name*" required>
+        <input class="hf" type="email" placeholder="Email Address*" required>
+        <input class="hf" type="tel" placeholder="Phone Number*" required>
+        <select class="hf" required>
+          <option value="" disabled selected>Select A Service*</option>
+          <option>Built-in Cupboards</option>
+          <option>Kitchen Fitting</option>
+          <option>Bedroom Furniture</option>
+          <option>Office Furniture</option>
+          <option>Partitions</option>
+          <option>Aluminium Works</option>
+          <option>House Projects</option>
+        </select>
+        <button class="hf-btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-g">
+      <div><img class="about-img" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Dadiso Showroom"></div>
+      <div class="about-txt">
+        <div class="sec-tag">About Us</div>
+        <h2 class="sh">Your Partner in Home &amp; Office Projects.</h2>
+        <p>Dadiso Home and Office Projects specialises in custom built-in solutions for homes and offices across Zimbabwe. From fitted cupboards and kitchens to bedroom furniture, office fitouts, partitions and aluminium works — we design and build quality interiors that make spaces functional, beautiful and lasting. Every project is handled with precision, care and a commitment to excellence.</p>
+        <div class="about-tags">
+          <span class="about-tag">Built-in Cupboards</span>
+          <span class="about-tag">Kitchens</span>
+          <span class="about-tag">Bedrooms</span>
+          <span class="about-tag">Partitions</span>
+          <span class="about-tag">Aluminium Works</span>
+          <span class="about-tag">Office Furniture</span>
+          <span class="about-tag">House Projects</span>
+        </div>
+        <a href="#services" class="btn-green">More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="srv-lay">
+      <div class="srv-lft">
+        <h2>What We Offer</h2>
+        <p>We specialise in built-in cupboards, fitted kitchens, bedroom and office furniture, partitions, aluminium works and full house interior projects.</p>
+        <a href="#contact" class="btn-green">View All Services</a>
+      </div>
+      <div class="srv-g">
+        <div class="srv-c">
+          <div class="srv-cb">
+            <div class="srv-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 3v18"/></svg></div>
+            <h3>Built-in Cupboards</h3>
+            <p>Custom built-in cupboards and storage solutions designed to fit your exact space perfectly. High quality finish, durable and long-lasting.</p>
+          </div>
+        </div>
+        <div class="srv-c">
+          <div class="srv-cb">
+            <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V8l7-5 7 5v12"/><rect x="9" y="14" width="6" height="6"/></svg></div>
+            <h3>Kitchen Fitting</h3>
+            <p>Full fitted kitchen design and installation. Modern finishes, efficient layouts and premium materials that transform your kitchen completely.</p>
+          </div>
+        </div>
+        <div class="srv-c">
+          <div class="srv-cb">
+            <div class="srv-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M3 15h18"/></svg></div>
+            <h3>Bedroom Furniture</h3>
+            <p>Bespoke bedroom furniture including wardrobes, headboards, bedside units and dressing tables. Built to your specifications and style.</p>
+          </div>
+        </div>
+        <div class="srv-c">
+          <div class="srv-cb">
+            <div class="srv-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M12 12v3"/><path d="M2 12h20"/></svg></div>
+            <h3>Office Furniture</h3>
+            <p>Professional office furniture and fitouts — desks, cabinets, reception counters and workstations built to enhance productivity and appearance.</p>
+          </div>
+        </div>
+        <div class="srv-c">
+          <div class="srv-cb">
+            <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><rect x="6" y="6" width="12" height="12"/></svg></div>
+            <h3>Partitions</h3>
+            <p>Room partitions and dividers for homes and offices. Create functional separate spaces with clean, modern and well-finished partition systems.</p>
+          </div>
+        </div>
+        <div class="srv-c">
+          <div class="srv-cb">
+            <div class="srv-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="18" rx="1"/><rect x="13" y="3" width="8" height="18" rx="1"/><path d="M11 8h2M11 12h2M11 16h2"/></svg></div>
+            <h3>Aluminium Works</h3>
+            <p>Quality aluminium door frames, window frames, partitions and shopfronts. Durable, low-maintenance and professionally installed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="wrap">
+    <h2 class="why-h">We Are The Professionals For Your Dream Project.</h2>
+    <div class="why-g">
+      <div class="why-c">
+        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#111" stroke-width="2.5"><rect x="8" y="28" width="48" height="28" rx="2"/><path d="M20 28V20a12 12 0 0 1 24 0v8"/><circle cx="32" cy="42" r="4"/></svg>
+        <h3>Quality</h3>
+        <p>We use premium materials and expert craftsmanship to deliver strong, beautiful built-in solutions that stand the test of time in every home and office.</p>
+      </div>
+      <div class="why-c">
+        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#111" stroke-width="2.5"><path d="M12 52V36l20-24 20 24v16H12z"/><path d="M24 52v-16h16v16"/></svg>
+        <h3>Experience</h3>
+        <p>Years of hands-on experience in built-in furniture, kitchen fitting and office projects ensures reliable, precise and professional results every time.</p>
+      </div>
+      <div class="why-c">
+        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#111" stroke-width="2.5"><path d="M32 8l6 12 14 2-10 10 2 14-12-6-12 6 2-14L12 22l14-2z"/></svg>
+        <h3>Custom Solutions</h3>
+        <p>Every project is fully custom — designed and built to perfectly fit your space, your needs and your budget with no compromise on quality.</p>
+      </div>
+      <div class="why-c">
+        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#111" stroke-width="2.5"><circle cx="32" cy="32" r="22"/><path d="M22 32l8 8 12-14"/></svg>
+        <h3>Reliability</h3>
+        <p>Dependable service, on-time delivery and consistent results. We build lasting relationships with every client through trust and transparency.</p>
+      </div>
+      <div class="why-c">
+        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#111" stroke-width="2.5"><rect x="8" y="16" width="48" height="32" rx="2"/><path d="M8 24h48M24 16v32M40 16v32"/></svg>
+        <h3>Versatility</h3>
+        <p>From cupboards and kitchens to office fitouts and aluminium works — we offer a comprehensive range of home and office solutions under one roof.</p>
+      </div>
+      <div class="why-c">
+        <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#111" stroke-width="2.5"><path d="M32 10C19 22 10 30 10 42a22 22 0 0 0 44 0c0-12-9-20-22-32z"/><path d="M32 54V34M24 42l8-8 8 8"/></svg>
+        <h3>Zimbabwe-Wide</h3>
+        <p>Based in Zimbabwe and serving clients nationwide. We travel to deliver professional, high-quality installations wherever you are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTH -->
+<section id="strength">
+  <div class="wrap">
+    <div class="str-g">
+      <div><img class="str-img" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80" alt="Quality Workmanship"></div>
+      <div class="str-txt">
+        <h2>Built Right. Built to Last.</h2>
+        <p>Choose quality built-in solutions that combine durability and modern design. We are here to deliver excellence on every home and office project, big or small.</p>
+        <a href="#contact" class="btn-green">Request a quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY — 6 images only as requested -->
+<section id="gallery">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:44px">
+      <h2 class="sh sc">Gallery</h2>
+      <p class="sp" style="max-width:620px;margin:12px auto 0">Browse our gallery showcasing quality built-in cupboards, fitted kitchens, bedroom and office furniture — crafted with precision and care.</p>
+    </div>
+    <div class="gal-g">
+      <div class="gal-i" onclick="oLb(this)"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80" alt="Kitchen"><div class="gal-ov"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14 15.5l.27.28v.79l5 5-1.5 1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg></div></div>
+      <div class="gal-i" onclick="oLb(this)"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80" alt="Cupboard"><div class="gal-ov"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14 15.5l.27.28v.79l5 5-1.5 1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg></div></div>
+      <div class="gal-i" onclick="oLb(this)"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&q=80" alt="Bedroom"><div class="gal-ov"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14 15.5l.27.28v.79l5 5-1.5 1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg></div></div>
+      <div class="gal-i" onclick="oLb(this)"><img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=700&q=80" alt="Office"><div class="gal-ov"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14 15.5l.27.28v.79l5 5-1.5 1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg></div></div>
+      <div class="gal-i" onclick="oLb(this)"><img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=700&q=80" alt="Partition"><div class="gal-ov"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14 15.5l.27.28v.79l5 5-1.5 1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg></div></div>
+      <div class="gal-i" onclick="oLb(this)"><img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&q=80" alt="Aluminium"><div class="gal-ov"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14 15.5l.27.28v.79l5 5-1.5 1.5-5-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:44px">
+      <h2 class="sh sc">Projects Completed</h2>
+      <p class="sp" style="max-width:700px;margin:12px auto 0">Discover some of our completed home and office projects across Zimbabwe — demonstrating our precision, quality and trusted craftsmanship.</p>
+    </div>
+    <div class="proj-g">
+      <div class="proj-c"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen"><div class="proj-cap">Fitted Kitchen, Harare</div></div>
+      <div class="proj-c"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Cupboard"><div class="proj-cap">Built-in Cupboards, Bulawayo</div></div>
+      <div class="proj-c"><img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&q=80" alt="Office"><div class="proj-cap">Office Fitout, Harare CBD</div></div>
+    </div>
+    <div style="text-align:center"><a href="#gallery" class="btn-green">More Completed Work</a></div>
+  </div>
+</section>
+
+<!-- EXPERTS -->
+<section id="experts">
+  <div class="wrap">
+    <div class="exp-g">
+      <div class="exp-l">
+        <h2>Talk To Our Experts And Get Your Dream Project Done</h2>
+        <div class="exp-contacts">
+          <div class="exp-ci">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="#111"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            <a href="tel:+263780000000">+263 78 000 0000</a>
+          </div>
+          <div class="exp-ci">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="#111"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:info@dadisoprojects.co.zw">info@dadisoprojects.co.zw</a>
+          </div>
+        </div>
+        <a href="#contact" class="btn-green">Request a quote</a>
+      </div>
+      <div><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=300&q=80" alt="" style="border-radius:4px;width:220px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:44px"><h2 class="sh sc">What Our Clients Say</h2></div>
+    <div class="testi-s">
+      <div class="testi-tr" id="ttr">
+        <div class="testi-sl"><div class="testi-cd">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-qt">"Dadiso transformed our kitchen completely. The built-in cupboards are absolutely perfect — every detail was done with care and the finish is flawless. We couldn't be happier with the results!"</p>
+          <div class="testi-au"><div class="testi-av">TM</div><div><div class="testi-nm">Tatenda Moyo</div><div class="testi-rl">Homeowner, Harare</div></div></div>
+        </div></div>
+        <div class="testi-sl"><div class="testi-cd">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-qt">"We hired Dadiso to fit out our new office and the results are exceptional. Professional team, on time, and the quality of the furniture and partitions is outstanding. Highly recommended!"</p>
+          <div class="testi-au"><div class="testi-av">CN</div><div><div class="testi-nm">Chipo Nkomo</div><div class="testi-rl">Business Owner, Bulawayo</div></div></div>
+        </div></div>
+        <div class="testi-sl"><div class="testi-cd">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-qt">"The bedroom furniture Dadiso built for us is solid, beautiful and exactly what we asked for. Great communication throughout the project and delivered on time. Will definitely use them again."</p>
+          <div class="testi-au"><div class="testi-av">RS</div><div><div class="testi-nm">Rumbi Sithole</div><div class="testi-rl">Client, Harare</div></div></div>
+        </div></div>
+      </div>
+    </div>
+    <div class="testi-arr">
+      <button class="ta" onclick="prevT()">&#8592;</button>
+      <button class="ta" onclick="nextT()">&#8594;</button>
+    </div>
+    <div class="testi-nav" id="tdots">
+      <button class="td act" onclick="goT(0)"></button>
+      <button class="td" onclick="goT(1)"></button>
+      <button class="td" onclick="goT(2)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:0">
+  <div class="cmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121066.4!2d31.0027!3d-17.8249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e706b17269%3A0xfc8c6a4c3c34b37d!2sHarare%2C%20Zimbabwe!5e0!3m2!1sen!2szw!4v1698000000" allowfullscreen loading="lazy"></iframe></div>
+  <div class="cbody">
+    <div class="cform">
+      <h2>Let's Have A Talk.</h2>
+      <form onsubmit="cSub(event)">
+        <input class="cf" type="text" placeholder="Full Name*" required>
+        <input class="cf" type="email" placeholder="Email Address*" required>
+        <input class="cf" type="tel" placeholder="Phone Number*" required>
+        <textarea class="cf" placeholder="Message*" required></textarea>
+        <button class="cf-sbmt" type="submit">Send Message</button>
+        <div class="cf-ok" id="cfOk">Thank you! We'll be in touch within 24 hours.</div>
+      </form>
+    </div>
+    <div class="cpanel">
+      <h2>Contact Information</h2>
+      <div class="ci"><div class="ci-dot">&#128205;</div><div class="ci-txt">Zimbabwe</div></div>
+      <div class="ci"><div class="ci-dot">&#128222;</div><div class="ci-txt"><a href="tel:+263780000000">+263 78 000 0000</a></div></div>
+      <div class="ci"><div class="ci-dot">&#9993;</div><div class="ci-txt"><a href="mailto:info@dadisoprojects.co.zw">info@dadisoprojects.co.zw</a></div></div>
+      <div class="ci"><div class="ci-dot">W</div><div class="ci-txt"><a href="https://wa.me/263780000000" target="_blank">Chat on WhatsApp</a></div></div>
+      <div class="ci"><div class="ci-dot">&#128336;</div><div class="ci-txt">Mon – Sat: 8AM – 5PM</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div class="fb">
+        <div class="fb-logo">
+          <div style="width:44px;height:44px;border-radius:6px;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg viewBox="0 0 32 32" width="28" height="28" fill="none"><rect x="2" y="16" width="12" height="14" fill="#fff"/><polygon points="8,4 2,16 14,16" fill="rgba(255,255,255,0.6)"/><rect x="16" y="10" width="14" height="20" fill="#fff"/><polygon points="23,2 16,10 30,10" fill="rgba(255,255,255,0.6)"/></svg>
+          </div>
+          <div><strong style="font-size:15px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.5px;display:block">Dadiso Projects</strong><span style="font-size:11px;color:#4caf80;letter-spacing:1px;text-transform:uppercase">Home &amp; Office Solutions</span></div>
+        </div>
+        <p>Specialising in custom built-in cupboards, fitted kitchens, bedroom and office furniture, partitions and aluminium works across Zimbabwe. Quality you can trust.</p>
+        <div class="fb-soc">
+          <a href="https://facebook.com" target="_blank">f</a>
+          <a href="https://wa.me/263780000000" target="_blank">W</a>
+          <a href="mailto:info@dadisoprojects.co.zw">&#9993;</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#projects">Completed Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Built-in Cupboards</a></li>
+          <li><a href="#services">Kitchen Fitting</a></li>
+          <li><a href="#services">Bedroom Furniture</a></li>
+          <li><a href="#services">Office Furniture</a></li>
+          <li><a href="#services">Partitions</a></li>
+          <li><a href="#services">Aluminium Works</a></li>
+        </ul>
+      </div>
+      <div class="fc fn">
+        <h4>Newsletter</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,.6);margin-bottom:16px;line-height:1.6">Get updates on our latest projects and special offers.</p>
+        <input type="email" placeholder="Your email address" id="nlE">
+        <a href="#" class="btn-green" onclick="nlS(event)">Subscribe</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <p>Copyright &copy; 2026 <a href="#">Dadiso Home and Office Projects</a>. All rights reserved.</p>
+      <div class="fbl"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floats">
+  <a href="tel:+263780000000" class="fl-btn fl-call" title="Call Us">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+  </a>
+  <a href="https://wa.me/263780000000" target="_blank" class="fl-btn fl-wa" title="WhatsApp">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.988-1.35A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 0 1-4.331-1.273l-.31-.184-3.22.87.87-3.145-.202-.322A8 8 0 1 1 12 20z"/></svg>
+  </a>
+  <button class="fl-btn fl-x" id="flX" onclick="tgF()">&#10005;</button>
+</div>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
+
+<div class="lb" id="lb" onclick="cLb()">
+  <button class="lb-x" onclick="cLb()">&#10005;</button>
+  <img id="lbI" src="" alt="">
+</div>
+
+<script>
+const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
+ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open')});
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');mob.classList.remove('open')}));
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>btt.classList.toggle('show',window.scrollY>400));
+let fO=true;
+function tgF(){fO=!fO;document.querySelectorAll('.fl-call,.fl-wa').forEach(e=>e.style.display=fO?'flex':'none');document.getElementById('flX').innerHTML=fO?'&#10005;':'&#9742;';}
+let ti=0;
+const ttr=document.getElementById('ttr'),tds=document.querySelectorAll('.td');
+function goT(n){ti=n;ttr.style.transform='translateX(-'+(n*100)+'%)';tds.forEach((d,i)=>d.classList.toggle('act',i===n));}
+function nextT(){goT((ti+1)%3);}
+function prevT(){goT((ti+2)%3);}
+setInterval(nextT,5500);
+function oLb(el){document.getElementById('lbI').src=el.querySelector('img').src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function cLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cLb();});
+function hq(e){e.preventDefault();alert("Thank you! We'll contact you within 24 hours.");e.target.reset();}
+function cSub(e){e.preventDefault();const ok=document.getElementById('cfOk');ok.classList.add('show');e.target.querySelectorAll('input,textarea').forEach(f=>f.value='');setTimeout(()=>ok.classList.remove('show'),5000);}
+function nlS(e){e.preventDefault();const v=document.getElementById('nlE').value;if(v){alert('Subscribed! Thank you.');document.getElementById('nlE').value='';}else alert('Please enter your email.');}
+</script>
+</body>
+</html>
