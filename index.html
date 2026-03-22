@@ -4,333 +4,803 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dadiso Home and Office Projects | Premium Interior Solutions | Zimbabwe</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
+
 :root{
   --green:#1a6b3c;
   --green2:#22883e;
   --green-light:#e8f5ee;
-  --dark:#0f0f0f;
-  --light:#f7f8f5;
-  --border:#e8ebe5;
-  --text:#555;
-  --muted:#888;
+  --dark:#0a0f0c;
+  --light:#f4f7f4;
+  --border:#e2e8e3;
+  --text:#5a6360;
+  --muted:#8a9490;
   --gold:#c8973a;
+  --cream:#faf9f6;
 }
-.topbar{background:var(--dark);padding:9px 0}
-.topbar .inner{max-width:1320px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
-.topbar-left{display:flex;gap:6px}
-.tb-icon{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800;transition:background .2s;border:1px solid rgba(255,255,255,.15)}
-.tb-icon:hover{background:var(--green)}
-.topbar-right{display:flex;gap:28px;align-items:center}
+
+/* ─── TOPBAR ─── */
+.topbar{background:var(--dark);padding:10px 0}
+.topbar .inner{max-width:1360px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between}
+.topbar-left{display:flex;gap:8px}
+.tb-icon{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;transition:all .25s;border:1px solid rgba(255,255,255,.1)}
+.tb-icon:hover{background:var(--green);border-color:var(--green)}
+.topbar-right{display:flex;gap:32px;align-items:center}
 .tb-item{display:flex;align-items:center;gap:10px}
-.tb-lbl{font-size:11px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.5px;display:block}
-.tb-val{font-size:12px;font-weight:600;color:rgba(255,255,255,.85)}
-.tb-val a{color:rgba(255,255,255,.85)}
+.tb-lbl{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.8px;display:block}
+.tb-val{font-size:12px;font-weight:500;color:rgba(255,255,255,.8)}
+.tb-val a{color:rgba(255,255,255,.8);transition:color .2s}
 .tb-val a:hover{color:#fff}
-nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.nav-inner{max-width:1320px;margin:0 auto;padding:0 32px;display:flex;align-items:center;height:74px;gap:16px}
+
+/* ─── NAV ─── */
+nav{background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-inner{max-width:1360px;margin:0 auto;padding:0 40px;display:flex;align-items:center;height:72px;gap:16px}
 .logo-wrap{display:flex;align-items:center;gap:14px;margin-right:auto;min-width:0;flex-shrink:0}
-.logo-icon{width:48px;height:48px;border-radius:10px;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.logo-text strong{font-size:16px;font-weight:900;color:#111;text-transform:uppercase;letter-spacing:.5px;display:block;line-height:1.1}
-.logo-text span{font-size:10px;color:var(--green);font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.logo-icon{width:46px;height:46px;border-radius:10px;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s}
+.logo-wrap:hover .logo-icon{transform:scale(1.05)}
+.logo-text strong{font-size:15px;font-weight:700;color:#111;letter-spacing:.3px;display:block;line-height:1.15}
+.logo-text span{font-size:9.5px;color:var(--green);font-weight:600;letter-spacing:2px;text-transform:uppercase}
 .nav-menu{display:flex;align-items:center;list-style:none;gap:0}
-.nav-menu>li>a{display:flex;align-items:center;gap:4px;padding:0 14px;height:74px;font-size:13.5px;font-weight:500;color:#333;transition:color .2s;white-space:nowrap}
+.nav-menu>li>a{display:flex;align-items:center;gap:4px;padding:0 15px;height:72px;font-size:13px;font-weight:500;color:#444;transition:color .2s;white-space:nowrap;position:relative}
+.nav-menu>li>a::after{content:'';position:absolute;bottom:0;left:15px;right:15px;height:2px;background:var(--green);transform:scaleX(0);transition:transform .25s;transform-origin:left}
 .nav-menu>li>a:hover{color:var(--green)}
-.nav-menu>li.hd>a::after{content:'▾';font-size:9px;margin-left:2px}
-.drop{position:absolute;top:100%;left:0;background:#fff;min-width:210px;border:1px solid var(--border);box-shadow:0 12px 40px rgba(0,0,0,.1);opacity:0;pointer-events:none;transform:translateY(8px);transition:all .22s;z-index:200}
+.nav-menu>li>a:hover::after{transform:scaleX(1)}
+.nav-menu>li.hd>a>span.arr{font-size:8px;margin-left:3px;transition:transform .2s}
+.nav-menu>li:hover .arr{transform:rotate(180deg)}
+.drop{position:absolute;top:100%;left:0;background:#fff;min-width:210px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.1);opacity:0;pointer-events:none;transform:translateY(10px);transition:all .25s cubic-bezier(.16,1,.3,1);z-index:200}
 .nav-menu>li{position:relative}
 .nav-menu>li:hover .drop{opacity:1;pointer-events:all;transform:translateY(0)}
-.drop a{display:block;padding:11px 18px;font-size:13px;color:#444;border-bottom:1px solid var(--border);transition:all .15s}
+.drop a{display:block;padding:11px 20px;font-size:12.5px;color:#555;border-bottom:1px solid var(--border);transition:all .15s;position:relative;overflow:hidden}
 .drop a:last-child{border-bottom:none}
+.drop a::before{content:'';position:absolute;left:0;top:0;width:3px;height:100%;background:var(--green);transform:scaleY(0);transition:transform .2s}
 .drop a:hover{background:var(--green-light);color:var(--green);padding-left:24px}
-.nav-cta{background:var(--green);color:#fff;padding:0 24px;height:44px;display:flex;align-items:center;font-weight:700;font-size:12.5px;letter-spacing:.5px;text-transform:uppercase;transition:background .2s;white-space:nowrap;flex-shrink:0;border-radius:3px}
-.nav-cta:hover{background:var(--dark)}
+.drop a:hover::before{transform:scaleY(1)}
+.nav-cta{background:var(--green);color:#fff;padding:0 22px;height:42px;display:flex;align-items:center;font-weight:600;font-size:12px;letter-spacing:.6px;text-transform:uppercase;transition:all .25s;white-space:nowrap;flex-shrink:0;border-radius:4px;position:relative;overflow:hidden}
+.nav-cta::before{content:'';position:absolute;inset:0;background:#fff;opacity:0;transition:opacity .25s}
+.nav-cta:hover::before{opacity:.1}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,107,60,.35)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;margin-left:auto;flex-shrink:0}
-.hamburger span{width:24px;height:2px;background:#111;transition:all .25s;display:block}
+.hamburger span{width:22px;height:2px;background:#111;transition:all .28s cubic-bezier(.16,1,.3,1);display:block;transform-origin:center}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mob-menu{display:none;background:#fff;border-top:1px solid var(--border);overflow:hidden;max-height:0;transition:max-height .35s ease}
-.mob-menu.open{max-height:540px}
-.mob-menu a{display:block;padding:14px 24px;font-size:15px;font-weight:500;color:#333;border-bottom:1px solid var(--border)}
+.mob-menu{display:none;background:#fff;border-top:1px solid var(--border);overflow:hidden;max-height:0;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+.mob-menu.open{max-height:600px}
+.mob-menu a{display:block;padding:15px 24px;font-size:14px;font-weight:500;color:#333;border-bottom:1px solid var(--border)}
 .mob-menu a:hover{background:var(--light);color:var(--green)}
 .mob-menu .mob-cta{background:var(--green);color:#fff;font-weight:700;text-align:center}
-#hero{position:relative;min-height:94vh;background:url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1800&q=85') center/cover no-repeat;display:flex;align-items:stretch;width:100%}
-#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.35) 60%,rgba(0,0,0,.1) 100%)}
-.hero-inner{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:0 32px;width:100%;display:flex;align-items:center}
-.hero-content{max-width:620px}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;margin-bottom:28px;backdrop-filter:blur(4px)}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green2);display:block}
-.hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(40px,5.5vw,74px);font-weight:900;color:#fff;line-height:1.08;margin-bottom:22px;letter-spacing:-1px}
-.hero-content h1 em{color:#a8d5b8;font-style:normal}
-.hero-content p{font-size:17px;color:rgba(255,255,255,.78);line-height:1.75;margin-bottom:38px;max-width:480px;font-weight:300}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.hero-btn-primary{background:var(--green);color:#fff;padding:16px 36px;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;transition:all .25s;border:2px solid var(--green)}
-.hero-btn-primary:hover{background:transparent;color:#fff}
-.hero-btn-secondary{background:transparent;color:#fff;padding:16px 36px;font-weight:600;font-size:14px;letter-spacing:.5px;text-transform:uppercase;border:2px solid rgba(255,255,255,.4);transition:all .25s}
-.hero-btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,.1)}
-.hero-stats{display:flex;gap:48px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.15)}
-.hero-stat .num{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;color:#fff;line-height:1}
-.hero-stat .lbl{font-size:12px;color:rgba(255,255,255,.55);margin-top:6px;letter-spacing:.5px;text-transform:uppercase}
-section{padding:96px 0}
-.wrap{max-width:1320px;margin:0 auto;padding:0 32px}
-.sec-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--green);margin-bottom:12px;display:block}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,46px);font-weight:900;color:#111;line-height:1.12;letter-spacing:-.5px}
-.sec-sub{font-size:16px;color:var(--text);line-height:1.75;margin-top:14px;max-width:560px}
-.sec-head{margin-bottom:60px}
+
+/* ─── PROMO BANNER ─── */
+.promo-banner{background:linear-gradient(90deg,var(--green) 0%,var(--green2) 100%);padding:14px 0;text-align:center;position:relative;overflow:hidden}
+.promo-banner::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0,rgba(255,255,255,.03) 1px,transparent 1px,transparent 20px)}
+.promo-banner p{color:#fff;font-size:13px;font-weight:500;letter-spacing:.3px}
+.promo-banner strong{font-weight:700}
+.promo-banner a{color:#fff;font-weight:700;text-decoration:none;margin-left:8px;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:1px;transition:border-color .2s}
+.promo-banner a:hover{border-color:#fff}
+
+/* ═══════════════════════════════════════
+   HERO — COMPLETELY REDESIGNED
+═══════════════════════════════════════ */
+#hero{
+  position:relative;
+  min-height:100svh;
+  min-height:100vh;
+  background:var(--dark);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* Cinematic background */
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.hero-bg-img{
+  position:absolute;
+  inset:0;
+  background:url('kit.jpeg') center/cover no-repeat;
+  opacity:.22;
+  transform:scale(1.08);
+  animation:heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom{
+  from{transform:scale(1.08) translate(0,0)}
+  to{transform:scale(1.02) translate(-1%,-.5%)}
+}
+.hero-bg-gradient{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 60%, rgba(26,107,60,.18) 0%, transparent 60%),
+    linear-gradient(160deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.7) 40%, rgba(0,0,0,.55) 100%);
+}
+/* Subtle diagonal lines */
+.hero-bg-lines{
+  position:absolute;
+  inset:0;
+  background:repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 60px,
+    rgba(26,107,60,.025) 60px,
+    rgba(26,107,60,.025) 61px
+  );
+}
+
+/* Content layout */
+.hero-layout{
+  position:relative;
+  z-index:2;
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  max-width:1360px;
+  width:100%;
+  margin:0 auto;
+  padding:0 40px;
+  align-items:center;
+  gap:60px;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+/* Left — main content */
+.hero-left{}
+
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:32px;
+  opacity:0;
+  animation:fadeSlideUp .8s cubic-bezier(.16,1,.3,1) .2s forwards;
+}
+.hero-eyebrow-dot{
+  width:28px;height:1px;background:var(--green2);display:block;
+}
+.hero-eyebrow-text{
+  font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+}
+
+.hero-heading{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(46px, 5.5vw, 82px);
+  font-weight:600;
+  color:#fff;
+  line-height:1.04;
+  letter-spacing:-1.5px;
+  margin-bottom:28px;
+  opacity:0;
+  animation:fadeSlideUp .9s cubic-bezier(.16,1,.3,1) .35s forwards;
+}
+.hero-heading em{
+  font-style:italic;
+  color:#a8d5b8;
+}
+.hero-heading .line-accent{
+  display:inline-block;
+  position:relative;
+}
+.hero-heading .line-accent::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:0;
+  right:0;
+  height:2px;
+  background:var(--green2);
+  transform:scaleX(0);
+  transform-origin:left;
+  animation:lineReveal 1s cubic-bezier(.16,1,.3,1) 1.2s forwards;
+}
+@keyframes lineReveal{to{transform:scaleX(1)}}
+
+.hero-body{
+  font-size:clamp(13.5px,1.2vw,16px);
+  color:rgba(255,255,255,.6);
+  line-height:1.8;
+  max-width:430px;
+  margin-bottom:42px;
+  font-weight:300;
+  opacity:0;
+  animation:fadeSlideUp .9s cubic-bezier(.16,1,.3,1) .5s forwards;
+}
+
+.hero-actions{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:60px;
+  opacity:0;
+  animation:fadeSlideUp .9s cubic-bezier(.16,1,.3,1) .65s forwards;
+}
+.hero-btn-main{
+  background:var(--green);
+  color:#fff;
+  padding:16px 38px;
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+  border-radius:3px;
+  transition:all .3s cubic-bezier(.16,1,.3,1);
+  border:2px solid var(--green);
+  position:relative;
+  overflow:hidden;
+}
+.hero-btn-main::before{
+  content:'';position:absolute;inset:0;background:rgba(255,255,255,.12);opacity:0;transition:opacity .25s;
+}
+.hero-btn-main:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(26,107,60,.45)}
+.hero-btn-main:hover::before{opacity:1}
+.hero-btn-ghost{
+  background:transparent;
+  color:#fff;
+  padding:16px 32px;
+  font-weight:500;
+  font-size:13px;
+  letter-spacing:.4px;
+  border:1.5px solid rgba(255,255,255,.25);
+  border-radius:3px;
+  transition:all .3s;
+  display:flex;align-items:center;gap:8px;
+}
+.hero-btn-ghost:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.05);transform:translateY(-2px)}
+.hero-btn-ghost svg{transition:transform .3s}
+.hero-btn-ghost:hover svg{transform:translateX(4px)}
+
+/* Stats bar */
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:32px;
+  opacity:0;
+  animation:fadeSlideUp .9s cubic-bezier(.16,1,.3,1) .8s forwards;
+}
+.hero-stat{
+  padding:0 24px 0 0;
+  border-right:1px solid rgba(255,255,255,.1);
+}
+.hero-stat:last-child{border-right:none;padding-left:24px;padding-right:0}
+.hero-stat:not(:first-child){padding-left:24px}
+.hero-stat-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,3vw,48px);
+  font-weight:700;
+  color:#fff;
+  line-height:1;
+  letter-spacing:-1px;
+}
+.hero-stat-num .plus{color:var(--green2);font-size:.75em}
+.hero-stat-lbl{
+  font-size:10.5px;
+  color:rgba(255,255,255,.4);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-top:6px;
+  font-weight:500;
+}
+
+/* Right — image collage */
+.hero-right{
+  position:relative;
+  height:580px;
+  opacity:0;
+  animation:fadeSlideUp .9s cubic-bezier(.16,1,.3,1) .45s forwards;
+}
+.hero-img-main{
+  position:absolute;
+  top:0;right:0;
+  width:78%;
+  height:72%;
+  object-fit:cover;
+  border-radius:2px;
+  box-shadow:0 40px 80px rgba(0,0,0,.5);
+}
+.hero-img-secondary{
+  position:absolute;
+  bottom:0;left:0;
+  width:54%;
+  height:52%;
+  object-fit:cover;
+  border-radius:2px;
+  box-shadow:0 30px 60px rgba(0,0,0,.4);
+  border:4px solid var(--dark);
+}
+.hero-img-accent{
+  position:absolute;
+  bottom:20%;right:0;
+  width:35%;
+  height:34%;
+  object-fit:cover;
+  border-radius:2px;
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+  border:4px solid var(--dark);
+}
+/* Floating badge on collage */
+.hero-badge{
+  position:absolute;
+  top:38%;left:36%;
+  background:var(--green);
+  color:#fff;
+  padding:14px 20px;
+  border-radius:3px;
+  text-align:center;
+  box-shadow:0 16px 40px rgba(26,107,60,.5);
+  z-index:3;
+  animation:floatBadge 4s ease-in-out infinite;
+}
+@keyframes floatBadge{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+.hero-badge-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;font-weight:700;line-height:1;display:block;
+}
+.hero-badge-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;opacity:.8;display:block;margin-top:3px}
+
+/* Scroll indicator */
+.hero-scroll{
+  position:absolute;
+  bottom:36px;left:50%;
+  transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  z-index:3;
+  opacity:0;
+  animation:fadeIn 1s ease 1.2s forwards;
+}
+.scroll-line{
+  width:1px;height:50px;
+  background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);
+  position:relative;overflow:hidden;
+}
+.scroll-line::after{
+  content:'';position:absolute;top:-100%;left:0;right:0;height:100%;
+  background:var(--green2);
+  animation:scrollAnim 2s ease infinite;
+}
+@keyframes scrollAnim{
+  to{top:200%}
+}
+.scroll-text{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);writing-mode:vertical-rl}
+
+@keyframes fadeSlideUp{
+  from{opacity:0;transform:translateY(32px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ─── SECTIONS GLOBAL ─── */
+section{padding:100px 0}
+.wrap{max-width:1360px;margin:0 auto;padding:0 40px}
+.sec-eyebrow{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:3px;color:var(--green);margin-bottom:14px;display:block}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.2vw,50px);font-weight:600;color:#111;line-height:1.1;letter-spacing:-.5px}
+.sec-sub{font-size:15px;color:var(--text);line-height:1.8;margin-top:14px;max-width:560px}
+.sec-head{margin-bottom:64px}
 .sec-head.center{text-align:center}
 .sec-head.center .sec-sub{margin:14px auto 0}
-.btn-green{display:inline-block;background:var(--green);color:#fff;padding:15px 34px;font-weight:700;font-size:13.5px;border:none;cursor:pointer;transition:all .22s;letter-spacing:.3px}
-.btn-green:hover{background:var(--dark)}
-.btn-outline{display:inline-block;background:transparent;color:var(--green);padding:14px 32px;font-weight:700;font-size:13.5px;border:2px solid var(--green);cursor:pointer;transition:all .22s}
-.btn-outline:hover{background:var(--green);color:#fff}
-#about{background:#fff;padding:80px 0}
-.about-g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+
+.btn-green{display:inline-block;background:var(--green);color:#fff;padding:15px 34px;font-weight:600;font-size:13px;border:none;cursor:pointer;transition:all .28s;letter-spacing:.4px;border-radius:3px;position:relative;overflow:hidden}
+.btn-green::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.1);opacity:0;transition:opacity .25s}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(26,107,60,.35)}
+.btn-green:hover::before{opacity:1}
+.btn-outline{display:inline-block;background:transparent;color:var(--green);padding:14px 32px;font-weight:600;font-size:13px;border:1.5px solid var(--green);cursor:pointer;transition:all .28s;border-radius:3px}
+.btn-outline:hover{background:var(--green);color:#fff;transform:translateY(-2px);box-shadow:0 10px 30px rgba(26,107,60,.25)}
+
+/* ─── ABOUT ─── */
+#about{background:#fff;padding:90px 0}
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
 .about-img-wrap{position:relative}
 .about-img{width:100%;aspect-ratio:4/3.2;object-fit:cover;display:block}
-.about-badge{position:absolute;bottom:-24px;right:-24px;background:var(--green);color:#fff;padding:28px 32px;text-align:center}
-.about-badge .big{font-family:'Playfair Display',serif;font-size:44px;font-weight:900;line-height:1;display:block}
-.about-badge .sm{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:.8;margin-top:4px;display:block}
-.about-txt p{font-size:16px;color:var(--text);line-height:1.85;margin:18px 0 28px}
-.about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
-.about-tag{background:var(--green-light);border:1px solid #c3e0ce;padding:7px 16px;font-size:12.5px;font-weight:600;color:var(--green);border-radius:2px}
+.about-badge{position:absolute;bottom:-24px;right:-24px;background:var(--green);color:#fff;padding:28px 32px;text-align:center;border-radius:2px;box-shadow:0 20px 50px rgba(26,107,60,.3)}
+.about-badge .big{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;line-height:1;display:block}
+.about-badge .sm{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.8;margin-top:4px;display:block}
+.about-txt p{font-size:15px;color:var(--text);line-height:1.85;margin:18px 0 28px}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.about-tag{background:var(--green-light);border:1px solid #c3e0ce;padding:6px 14px;font-size:11.5px;font-weight:600;color:var(--green);border-radius:2px}
 .about-checks{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
-.about-check{display:flex;align-items:center;gap:10px;font-size:14px;color:#333;font-weight:500}
-.about-check::before{content:'';width:20px;height:20px;border-radius:50%;background:var(--green);flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 10l4 4 6-7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:cover}
+.about-check{display:flex;align-items:center;gap:12px;font-size:14px;color:#333;font-weight:500}
+.check-icon{width:22px;height:22px;border-radius:50%;background:var(--green);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.check-icon svg{width:12px;height:12px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── SERVICES ─── */
 #services{background:var(--light)}
-.services-intro{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:60px}
+.services-intro{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px}
 .services-intro-right{text-align:right}
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.prod-card{background:#fff;border:1px solid var(--border);overflow:hidden;cursor:pointer;transition:all .3s;position:relative;display:flex;flex-direction:column}
-.prod-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.12);transform:translateY(-4px);border-color:var(--green)}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prod-card{background:#fff;border:1px solid var(--border);overflow:hidden;cursor:pointer;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;display:flex;flex-direction:column;border-radius:4px}
+.prod-card:hover{box-shadow:0 24px 60px rgba(0,0,0,.12);transform:translateY(-6px);border-color:transparent}
 .prod-img{position:relative;overflow:hidden;aspect-ratio:4/3}
-.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;display:block}
-.prod-card:hover .prod-img img{transform:scale(1.06)}
-.prod-badge{position:absolute;top:14px;left:14px;background:var(--green);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;z-index:2}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1);display:block}
+.prod-card:hover .prod-img img{transform:scale(1.08)}
+.prod-badge{position:absolute;top:14px;left:14px;background:var(--green);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;z-index:2;border-radius:2px}
 .prod-badge.popular{background:var(--gold)}
 .prod-badge.new{background:#2563eb}
-.prod-overlay{position:absolute;inset:0;background:rgba(26,107,60,.85);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.prod-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,107,60,.92) 0%,rgba(26,107,60,.5) 100%);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .35s}
 .prod-card:hover .prod-overlay{opacity:1}
-.prod-overlay-btn{background:#fff;color:var(--green);font-weight:700;font-size:13px;padding:12px 28px;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;transition:all .2s}
-.prod-overlay-btn:hover{background:var(--green);color:#fff}
+.prod-overlay-btn{background:#fff;color:var(--green);font-weight:700;font-size:12px;padding:12px 28px;letter-spacing:.5px;text-transform:uppercase;border:none;cursor:pointer;transition:all .2s;border-radius:2px}
+.prod-overlay-btn:hover{background:var(--dark);color:#fff}
 .prod-body{padding:22px 24px;flex:1;display:flex;flex-direction:column}
-.prod-cat{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:8px}
-.prod-title{font-size:17px;font-weight:800;color:#111;margin-bottom:10px;line-height:1.3}
-.prod-desc{font-size:13.5px;color:var(--text);line-height:1.65;flex:1;margin-bottom:16px}
+.prod-cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.prod-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#111;margin-bottom:10px;line-height:1.25}
+.prod-desc{font-size:13px;color:var(--text);line-height:1.65;flex:1;margin-bottom:16px}
 .prod-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
-.prod-price{font-family:'Playfair Display',serif}
-.prod-price .from{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;display:block}
-.prod-price .amount{font-size:22px;font-weight:900;color:var(--green);line-height:1}
-.prod-cta{background:var(--green);color:#fff;font-size:12px;font-weight:700;padding:10px 18px;border:none;cursor:pointer;transition:background .2s;text-transform:uppercase;letter-spacing:.5px}
-.prod-cta:hover{background:var(--dark)}
-#why{background:#fff;padding:80px 0}
-.why-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.why-c{background:#fff;padding:40px 32px;text-align:center;transition:all .25s}
-.why-c:hover{background:var(--green);color:#fff}
+.prod-price .from{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;display:block}
+.prod-price .amount{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--green);line-height:1}
+.prod-cta{background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:9px 16px;border:none;cursor:pointer;transition:all .22s;text-transform:uppercase;letter-spacing:.5px;border-radius:2px}
+.prod-cta:hover{background:var(--dark);transform:scale(1.02)}
+
+/* ─── WHY ─── */
+#why{background:#fff;padding:88px 0}
+.why-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border)}
+.why-c{background:#fff;padding:44px 32px;text-align:center;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;border-right:1px solid var(--border)}
+.why-c:last-child{border-right:none}
+.why-c::before{content:'';position:absolute;inset:0;background:var(--green);transform:translateY(100%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.why-c:hover::before{transform:translateY(0)}
 .why-c:hover h3,.why-c:hover p{color:#fff}
-.why-c:hover .why-icon{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)}
+.why-c:hover .why-icon{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2)}
 .why-c:hover .why-icon svg{stroke:#fff}
-.why-icon{width:60px;height:60px;border-radius:12px;background:var(--green-light);border:1px solid #c3e0ce;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;transition:all .25s}
-.why-icon svg{width:26px;height:26px;stroke:var(--green);fill:none;stroke-width:2;transition:stroke .25s}
-.why-c h3{font-size:16px;font-weight:800;color:#111;margin-bottom:10px;transition:color .25s}
-.why-c p{font-size:13.5px;color:var(--text);line-height:1.65;transition:color .25s}
-#process{background:var(--dark);padding:88px 0}
+.why-icon{width:58px;height:58px;border-radius:12px;background:var(--green-light);border:1px solid #c3e0ce;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;transition:all .35s;position:relative;z-index:1}
+.why-icon svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:1.8;transition:stroke .35s}
+.why-c h3{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#111;margin-bottom:10px;transition:color .35s;position:relative;z-index:1}
+.why-c p{font-size:13px;color:var(--text);line-height:1.7;transition:color .35s;position:relative;z-index:1}
+
+/* ─── PROCESS ─── */
+#process{background:var(--dark);padding:96px 0;position:relative;overflow:hidden}
+#process::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 80px,rgba(26,107,60,.03) 80px,rgba(26,107,60,.03) 81px)}
 .process-g{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
-.process-g::before{content:'';position:absolute;top:36px;left:calc(12.5%);right:calc(12.5%);height:1px;background:rgba(255,255,255,.15);z-index:0}
-.process-step{text-align:center;padding:0 24px;position:relative;z-index:1}
-.step-num{width:72px;height:72px;border-radius:50%;background:var(--green);color:#fff;font-family:'Playfair Display',serif;font-size:26px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;border:3px solid rgba(255,255,255,.1)}
-.process-step h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:10px}
-.process-step p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65}
-#gallery{background:var(--light);padding:88px 0}
-.gal-masonry{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto;gap:16px}
-.gal-item{overflow:hidden;cursor:pointer;position:relative;background:#111}
+.process-connector{position:absolute;top:35px;left:calc(12.5% + 36px);right:calc(12.5% + 36px);height:1px;background:linear-gradient(90deg,var(--green),rgba(26,107,60,.1));z-index:0}
+.process-step{text-align:center;padding:0 28px;position:relative;z-index:1}
+.step-num{width:72px;height:72px;border-radius:50%;background:var(--green);color:#fff;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;border:2px solid rgba(255,255,255,.08);transition:all .35s;position:relative}
+.step-num::before{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px dashed rgba(26,107,60,.4);animation:rotateDash 15s linear infinite}
+@keyframes rotateDash{to{transform:rotate(360deg)}}
+.process-step:hover .step-num{transform:scale(1.1);box-shadow:0 0 0 8px rgba(26,107,60,.15)}
+.process-step h3{font-size:14.5px;font-weight:600;color:#fff;margin-bottom:12px;letter-spacing:.2px}
+.process-step p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7}
+
+/* ─── VIDEOS SECTION ─── */
+#videos{background:var(--cream);padding:96px 0;position:relative;overflow:hidden}
+#videos::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),var(--green2),var(--green))}
+.videos-intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:60px}
+.videos-intro-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:12px}
+.videos-intro-note{font-size:13px;color:var(--text);max-width:260px;text-align:right;line-height:1.7}
+.video-reel{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.video-wrap{
+  position:relative;
+  border-radius:4px;
+  overflow:hidden;
+  background:var(--dark);
+  cursor:pointer;
+  box-shadow:0 20px 50px rgba(0,0,0,.12);
+  transition:all .35s cubic-bezier(.16,1,.3,1);
+}
+/* Portrait / 9:16 ratio */
+.video-wrap::before{content:'';display:block;padding-top:177.78%}
+.video-wrap video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:4px;
+}
+.video-wrap:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 36px 80px rgba(0,0,0,.22)}
+/* Play overlay */
+.video-play-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(to top, rgba(0,0,0,.55) 0%, rgba(0,0,0,.1) 50%, transparent 100%);
+  z-index:2;
+  transition:all .3s;
+  pointer-events:none;
+}
+.video-wrap:hover .video-play-overlay{background:linear-gradient(to top, rgba(0,0,0,.7) 0%, rgba(0,0,0,.2) 50%, transparent 100%)}
+.video-wrap.playing .video-play-overlay{opacity:0}
+.play-btn-circle{
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border:2px solid rgba(255,255,255,.4);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+  transition:all .3s;
+}
+.video-wrap:hover .play-btn-circle{background:var(--green);border-color:var(--green);transform:scale(1.1)}
+.play-btn-circle svg{width:24px;height:24px;fill:#fff;margin-left:3px}
+.video-label{
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.5px;
+  text-align:center;
+  padding:0 16px;
+  text-shadow:0 2px 8px rgba(0,0,0,.5);
+}
+.video-label-small{
+  font-size:11px;
+  color:rgba(255,255,255,.6);
+  display:block;
+  margin-top:4px;
+  font-weight:400;
+}
+/* Video bottom info bar */
+.video-meta{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:20px 16px 16px;
+  background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
+  z-index:3;
+  pointer-events:none;
+}
+.video-meta-title{font-size:13px;font-weight:600;color:#fff;line-height:1.3}
+.video-meta-sub{font-size:11px;color:rgba(255,255,255,.6);margin-top:3px}
+/* Number badge */
+.video-num{
+  position:absolute;
+  top:14px;left:14px;
+  width:32px;height:32px;border-radius:50%;
+  background:var(--green);
+  color:#fff;
+  font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  z-index:4;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+
+/* ─── GALLERY ─── */
+#gallery{background:var(--light);padding:96px 0}
+.gal-masonry{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:280px;gap:12px}
+.gal-item{overflow:hidden;cursor:pointer;position:relative;background:#111;border-radius:4px}
 .gal-item:nth-child(1){grid-row:span 2}
 .gal-item:nth-child(4){grid-row:span 2}
-.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s,opacity .3s;display:block;min-height:200px}
-.gal-item:hover img{transform:scale(1.06);opacity:.7}
-.gal-item-ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:22px;opacity:0;transition:opacity .3s;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 60%)}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1),opacity .35s;display:block}
+.gal-item:hover img{transform:scale(1.07);opacity:.65}
+.gal-item-ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:24px;opacity:0;transition:opacity .35s;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 60%)}
 .gal-item:hover .gal-item-ov{opacity:1}
-.gal-item-ov span{color:#fff;font-weight:700;font-size:14px}
-.gal-item-ov small{color:rgba(255,255,255,.65);font-size:12px;margin-top:3px}
-#testimonials{background:#fff;padding:88px 0}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.testi-card{background:var(--light);border:1px solid var(--border);padding:36px 32px;position:relative;transition:all .25s}
-.testi-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);border-color:var(--green)}
-.testi-card::before{content:'"';font-family:'Playfair Display',serif;font-size:80px;color:var(--green);opacity:.15;position:absolute;top:16px;left:28px;line-height:1}
-.testi-stars{color:var(--green);font-size:16px;margin-bottom:16px;letter-spacing:2px}
-.testi-qt{font-size:14.5px;color:#444;line-height:1.8;font-style:italic;margin-bottom:24px;position:relative;z-index:1}
+.gal-item-ov span{color:#fff;font-weight:600;font-size:13.5px}
+.gal-item-ov small{color:rgba(255,255,255,.6);font-size:11.5px;margin-top:4px;display:block}
+.gal-view-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;transition:border-color .2s}
+.gal-item:hover .gal-view-btn{border-color:#fff}
+
+/* ─── TESTIMONIALS ─── */
+#testimonials{background:#fff;padding:96px 0}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-card{background:var(--light);border:1px solid var(--border);padding:36px 32px;position:relative;transition:all .35s cubic-bezier(.16,1,.3,1);border-radius:4px;overflow:hidden}
+.testi-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--green);transform:scaleX(0);transition:transform .35s;transform-origin:left}
+.testi-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.08);transform:translateY(-4px);border-color:var(--border)}
+.testi-card:hover::after{transform:scaleX(1)}
+.testi-quote-mark{font-family:'Cormorant Garamond',serif;font-size:72px;color:var(--green);opacity:.12;position:absolute;top:10px;left:24px;line-height:1}
+.testi-stars{color:var(--green);font-size:14px;margin-bottom:16px;letter-spacing:2px}
+.testi-qt{font-size:14px;color:#444;line-height:1.85;font-style:italic;margin-bottom:24px;position:relative;z-index:1}
 .testi-au{display:flex;align-items:center;gap:12px}
-.testi-av{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.testi-nm{font-weight:700;font-size:14px;color:#111}
-.testi-rl{font-size:12px;color:var(--muted);margin-top:2px}
+.testi-av{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Cormorant Garamond',serif}
+.testi-nm{font-weight:600;font-size:14px;color:#111}
+.testi-rl{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+/* ─── CONTACT ─── */
 #contact{padding:0}
 .cmap{width:100%;height:300px}
 .cmap iframe{width:100%;height:100%;border:none;display:block}
-.cbody{display:grid;grid-template-columns:1fr 420px}
+.cbody{display:grid;grid-template-columns:1fr 400px}
 .cform{padding:64px 56px;background:#fff}
-.cform h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:#111;margin-bottom:8px}
-.cform p{font-size:14px;color:var(--text);margin-bottom:32px}
-.cf{width:100%;padding:15px 18px;background:var(--light);border:1px solid var(--border);font-family:'Inter',sans-serif;font-size:14px;color:#111;margin-bottom:14px;outline:none;transition:border-color .2s}
-.cf:focus{border-color:var(--green)}
+.cform h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:#111;margin-bottom:8px;letter-spacing:-.3px}
+.cform p{font-size:14px;color:var(--text);margin-bottom:32px;line-height:1.7}
+.cf{width:100%;padding:14px 18px;background:var(--light);border:1px solid var(--border);font-family:'DM Sans',sans-serif;font-size:13.5px;color:#111;margin-bottom:12px;outline:none;transition:border-color .25s,box-shadow .25s;border-radius:3px}
+.cf:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(26,107,60,.08)}
 .cf::placeholder{color:#bbb}
 textarea.cf{min-height:110px;resize:vertical}
-.cf-sbmt{background:var(--green);color:#fff;border:none;cursor:pointer;padding:16px 40px;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;transition:background .2s;letter-spacing:.3px}
-.cf-sbmt:hover{background:var(--dark)}
-.cf-ok{display:none;margin-top:14px;padding:12px 18px;background:#e8f5ee;border-left:4px solid var(--green);color:var(--green);font-size:14px;font-weight:600}
+.cf-sbmt{background:var(--green);color:#fff;border:none;cursor:pointer;padding:15px 40px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:13.5px;transition:all .28s;letter-spacing:.3px;border-radius:3px;position:relative;overflow:hidden}
+.cf-sbmt:hover{background:var(--dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,107,60,.3)}
+.cf-ok{display:none;margin-top:14px;padding:12px 18px;background:#e8f5ee;border-left:3px solid var(--green);color:var(--green);font-size:13.5px;font-weight:600;border-radius:2px}
 .cf-ok.show{display:block}
 .cpanel{background:var(--green);color:#fff;padding:64px 48px}
-.cpanel h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;margin-bottom:10px}
-.cpanel>p{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:40px;line-height:1.7}
+.cpanel h2{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;margin-bottom:10px;letter-spacing:-.3px}
+.cpanel>p{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:40px;line-height:1.8}
 .ci{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px}
-.ci-dot{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;border:1px solid rgba(255,255,255,.15)}
-.ci-lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.5);display:block;margin-bottom:3px}
-.ci-txt{font-size:14px;color:#fff;font-weight:600;line-height:1.5}
-.ci-txt a{color:#fff}
-.ci-txt a:hover{text-decoration:underline}
-.cpanel-hours{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:20px 22px;margin-top:32px}
-.cpanel-hours h4{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
-.hour-row{display:flex;justify-content:space-between;font-size:13.5px;color:rgba(255,255,255,.85);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.ci-dot{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;border:1px solid rgba(255,255,255,.15)}
+.ci-lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);display:block;margin-bottom:3px}
+.ci-txt{font-size:14px;color:#fff;font-weight:500;line-height:1.6}
+.ci-txt a{color:#fff;transition:opacity .2s}
+.ci-txt a:hover{opacity:.8}
+.cpanel-hours{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:20px 22px;margin-top:32px;border-radius:3px}
+.cpanel-hours h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px}
+.hour-row{display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.8);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07)}
 .hour-row:last-child{border-bottom:none}
-.hour-row span:last-child{font-weight:600}
-footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
-.footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.5fr;gap:56px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.08)}
+.hour-row span:last-child{font-weight:600;color:#fff}
+
+/* ─── FOOTER ─── */
+footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 0 0}
+.footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1.5fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07)}
 .fb-logo{display:flex;align-items:center;gap:14px;margin-bottom:20px}
-.fb p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:20px}
+.fb p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.85;margin-bottom:20px}
 .fb-soc{display:flex;gap:8px}
-.fb-soc a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:13px;transition:all .2s;border:1px solid rgba(255,255,255,.1)}
-.fb-soc a:hover{background:var(--green);color:#fff;border-color:var(--green)}
-.fc h4{font-size:11px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:2px;margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.fb-soc a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:12px;transition:all .25s;border:1px solid rgba(255,255,255,.08)}
+.fb-soc a:hover{background:var(--green);color:#fff;border-color:var(--green);transform:translateY(-2px)}
+.fc h4{font-size:10px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:2.5px;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.07)}
 .fc ul{list-style:none}
 .fc ul li{margin-bottom:10px}
-.fc ul li a{font-size:13.5px;color:rgba(255,255,255,.5);transition:color .2s;display:flex;align-items:center;gap:7px}
-.fc ul li a::before{content:'→';color:var(--green2);font-size:12px}
-.fc ul li a:hover{color:#fff}
-.fn input{width:100%;padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:'Inter',sans-serif;font-size:13.5px;margin-bottom:10px;outline:none;transition:border-color .2s}
+.fc ul li a{font-size:13px;color:rgba(255,255,255,.45);transition:all .22s;display:flex;align-items:center;gap:8px}
+.fc ul li a::before{content:'→';color:var(--green2);font-size:11px;transition:transform .2s}
+.fc ul li a:hover{color:#fff;padding-left:4px}
+.fc ul li a:hover::before{transform:translateX(3px)}
+.fn input{width:100%;padding:12px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;margin-bottom:10px;outline:none;transition:border-color .22s;border-radius:3px}
 .fn input:focus{border-color:var(--green)}
-.fn input::placeholder{color:rgba(255,255,255,.35)}
+.fn input::placeholder{color:rgba(255,255,255,.3)}
 .fn .btn-green{width:100%;text-align:center;padding:13px;display:block;font-size:13px}
 .fbot{padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.fbot p{font-size:12.5px;color:rgba(255,255,255,.35)}
-.fbot a{color:rgba(255,255,255,.5)}
+.fbot p{font-size:12px;color:rgba(255,255,255,.3)}
+.fbot a{color:rgba(255,255,255,.45);transition:color .2s}
 .fbot a:hover{color:#fff}
 .fbl{display:flex;gap:20px}
-.fbl a{font-size:12.5px;color:rgba(255,255,255,.35);transition:color .2s}
+.fbl a{font-size:12px;color:rgba(255,255,255,.3);transition:color .2s}
 .fbl a:hover{color:#fff}
-.floats{position:fixed;bottom:28px;left:22px;z-index:998;display:flex;flex-direction:column;gap:10px}
-.fl-btn{width:54px;height:54px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2)}
-.fl-btn:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(0,0,0,.3)}
-.fl-call,.fl-wa{background:#25d366}
-.btt{position:fixed;bottom:28px;right:28px;z-index:998;width:48px;height:48px;background:var(--green);border:none;color:#fff;font-size:20px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;box-shadow:0 4px 16px rgba(26,107,60,.35)}
-.btt.show{opacity:1;pointer-events:all}
-.btt:hover{background:var(--dark)}
 
-/* ===== MODAL — same structure, added thumbnail strip ===== */
-.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9000;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+/* ─── FLOATING BUTTONS ─── */
+.floats{position:fixed;bottom:28px;left:22px;z-index:998;display:flex;flex-direction:column;gap:10px}
+.fl-btn{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .28s cubic-bezier(.16,1,.3,1);text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+.fl-btn:hover{transform:scale(1.12) translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+.fl-call,.fl-wa{background:#25d366}
+.btt{position:fixed;bottom:28px;right:28px;z-index:998;width:46px;height:46px;background:var(--green);border:none;color:#fff;font-size:18px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all .3s;box-shadow:0 4px 20px rgba(26,107,60,.4)}
+.btt.show{opacity:1;pointer-events:all}
+.btt:hover{background:var(--dark);transform:translateY(-3px)}
+
+/* ─── MODAL ─── */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9000;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px)}
 .modal-backdrop.open{opacity:1;pointer-events:all}
-.modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-48%) scale(.96);z-index:9001;background:#fff;width:min(920px,95vw);max-height:92vh;overflow-y:auto;opacity:0;pointer-events:none;transition:all .35s cubic-bezier(.34,1.3,.64,1)}
+.modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-48%) scale(.95);z-index:9001;background:#fff;width:min(940px,95vw);max-height:92vh;overflow-y:auto;opacity:0;pointer-events:none;transition:all .38s cubic-bezier(.16,1.2,.3,1);border-radius:6px;overflow:hidden}
 .modal.open{opacity:1;pointer-events:all;transform:translate(-50%,-50%) scale(1)}
 .modal-inner{display:grid;grid-template-columns:1fr 1fr}
 .modal-img{position:relative;overflow:hidden;display:flex;flex-direction:column;background:#111}
 .modal-img-main{flex:1;min-height:360px;overflow:hidden;position:relative}
-.modal-img-main img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .22s}
+.modal-img-main img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .25s}
 .modal-img-main img.fading{opacity:0}
-.modal-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:5px;background:#0a0a0a;flex-shrink:0}
-.modal-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:pointer;opacity:.4;border:2px solid transparent;transition:all .2s;display:block}
+.modal-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:4px;background:#080808;flex-shrink:0}
+.modal-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:pointer;opacity:.35;border:2px solid transparent;transition:all .25s;display:block}
 .modal-thumb.active,.modal-thumb:hover{opacity:1;border-color:var(--green)}
-.modal-badge{position:absolute;top:18px;left:18px;background:var(--green);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;z-index:2}
+.modal-badge{position:absolute;top:16px;left:16px;background:var(--green);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;z-index:2;border-radius:2px}
 .modal-body{padding:44px 40px;display:flex;flex-direction:column}
 .modal-cat{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
-.modal-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#111;line-height:1.2;margin-bottom:14px}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#111;line-height:1.15;margin-bottom:14px;letter-spacing:-.3px}
 .modal-rating{display:flex;align-items:center;gap:6px;margin-bottom:18px}
 .modal-stars{color:var(--gold);font-size:14px}
-.modal-rating span{font-size:13px;color:var(--muted)}
+.modal-rating span{font-size:12.5px;color:var(--muted)}
 .modal-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:22px;padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.modal-price .from{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
-.modal-price .amount{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--green)}
-.modal-desc{font-size:14px;color:var(--text);line-height:1.8;margin-bottom:24px;flex:1}
-.modal-features{display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
-.modal-feature{display:flex;align-items:center;gap:10px;font-size:13.5px;color:#333}
-.modal-feature::before{content:'✓';width:22px;height:22px;border-radius:50%;background:var(--green-light);color:var(--green);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.modal-price .from{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.modal-price .amount{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:var(--green);letter-spacing:-.5px}
+.modal-desc{font-size:13.5px;color:var(--text);line-height:1.8;margin-bottom:24px;flex:1}
+.modal-features{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.modal-feature{display:flex;align-items:center;gap:10px;font-size:13px;color:#333}
+.modal-feature::before{content:'✓';width:22px;height:22px;border-radius:50%;background:var(--green-light);color:var(--green);font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .modal-actions{display:flex;gap:12px;margin-top:auto}
-.modal-actions .btn-green{flex:1;text-align:center;padding:15px}
-.modal-actions .btn-outline{padding:15px 20px}
-.modal-close{position:absolute;top:18px;right:18px;width:38px;height:38px;background:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;box-shadow:0 2px 12px rgba(0,0,0,.15);transition:all .2s;z-index:10}
+.modal-actions .btn-green{flex:1;text-align:center;padding:14px}
+.modal-actions .btn-outline{padding:14px 20px}
+.modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;background:#fff;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;box-shadow:0 2px 16px rgba(0,0,0,.2);transition:all .25s;z-index:10}
 .modal-close:hover{background:var(--green);color:#fff;transform:rotate(90deg)}
 
-.promo-banner{background:var(--green);padding:18px 0;text-align:center}
-.promo-banner p{color:#fff;font-size:13.5px;font-weight:500;letter-spacing:.3px}
-.promo-banner strong{font-weight:800}
-.promo-banner a{color:#fff;font-weight:700;text-decoration:underline;margin-left:8px}
+/* ─── SCROLL REVEAL ANIMATIONS ─── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.94);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
+.delay-5{transition-delay:.5s}
 
+/* ─── RESPONSIVE ─── */
 @media(max-width:1100px){
   .footer-top{grid-template-columns:1fr 1fr}
   .prod-grid{grid-template-columns:1fr 1fr}
   .why-g{grid-template-columns:1fr 1fr}
-  .process-g{grid-template-columns:1fr 1fr;gap:32px}
-  .process-g::before{display:none}
+  .process-g{grid-template-columns:1fr 1fr;gap:40px}
+  .process-connector{display:none}
   .testi-grid{grid-template-columns:1fr 1fr}
+  .video-reel{gap:16px}
+  .hero-right{height:480px}
+  .hero-layout{gap:40px}
 }
+
 @media(max-width:900px){
-  .about-g{grid-template-columns:1fr;gap:48px}
+  .hero-layout{grid-template-columns:1fr;padding-top:60px;padding-bottom:80px}
+  .hero-right{display:none}
+  .hero-heading{font-size:clamp(38px,8vw,58px)}
+  .hero-body{font-size:14px;max-width:100%}
+  .about-g{grid-template-columns:1fr;gap:56px}
   .about-badge{bottom:-16px;right:-16px}
   .cbody{grid-template-columns:1fr}
   .cpanel{padding:44px 32px}
-  .services-intro{grid-template-columns:1fr;gap:24px}
+  .services-intro{grid-template-columns:1fr;gap:20px}
   .services-intro-right{text-align:left}
   .modal-inner{grid-template-columns:1fr}
   .modal-img-main{min-height:240px}
   .testi-grid{grid-template-columns:1fr}
+  .videos-intro{grid-template-columns:1fr}
+  .videos-intro-right{align-items:flex-start;text-align:left}
+  .videos-intro-note{text-align:left}
+  .video-reel{grid-template-columns:repeat(3,1fr);gap:12px}
 }
+
 @media(max-width:768px){
   .topbar-right{display:none}
-  .topbar .inner{padding:0 16px}
+  .topbar .inner{padding:0 20px}
   .nav-menu{display:none}
   .hamburger{display:flex}
   .mob-menu{display:block}
-  .nav-inner{padding:0 16px;height:64px}
-  .logo-icon{width:42px;height:42px}
-  .logo-text strong{font-size:14px}
+  .nav-inner{padding:0 20px;height:62px}
+  .logo-icon{width:40px;height:40px}
+  .logo-text strong{font-size:13.5px}
   .logo-text span{font-size:9px}
-  .nav-cta{padding:0 14px;height:40px;font-size:11px;margin-left:0}
-  section{padding:60px 0}
-  .wrap{padding:0 16px}
-  .hero-inner{padding:0 20px}
-  .hero-stats{gap:28px}
-  .hero-stat .num{font-size:28px}
+  .nav-cta{padding:0 14px;height:38px;font-size:11px;margin-left:0}
+  section{padding:64px 0}
+  .wrap{padding:0 20px}
+  .hero-layout{padding:0 20px;padding-top:56px;padding-bottom:88px}
+  .hero-heading{font-size:clamp(34px,9vw,52px);letter-spacing:-1px}
+  .hero-body{font-size:13.5px}
+  .hero-stat-num{font-size:30px}
+  .hero-stat-lbl{font-size:9.5px}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+  .hero-eyebrow-text{font-size:10px}
+  .hero-btn-main,.hero-btn-ghost{padding:14px 28px;font-size:12px}
   .prod-grid{grid-template-columns:1fr}
   .why-g{grid-template-columns:1fr 1fr}
+  .why-c{border-right:1px solid var(--border);padding:32px 24px}
+  .why-g .why-c:nth-child(2n){border-right:none}
   .process-g{grid-template-columns:1fr 1fr}
-  .gal-masonry{grid-template-columns:1fr 1fr}
+  .gal-masonry{grid-auto-rows:220px}
   .gal-item:nth-child(1),.gal-item:nth-child(4){grid-row:span 1}
+  .video-reel{grid-template-columns:1fr;max-width:280px;margin:0 auto}
+  .video-wrap::before{padding-top:177.78%}
   .cform{padding:40px 24px}
-  .footer-top{grid-template-columns:1fr;gap:32px}
+  .footer-top{grid-template-columns:1fr;gap:36px}
   .fbot{flex-direction:column;text-align:center}
-  .hero-btns{flex-direction:column;max-width:280px}
-  .hero-btn-primary,.hero-btn-secondary{text-align:center}
+  .sec-title{font-size:clamp(26px,7vw,38px)}
+  .sec-sub{font-size:14px}
+  .sec-eyebrow{font-size:10px}
 }
+
 @media(max-width:480px){
   .why-g{grid-template-columns:1fr}
+  .why-c{border-right:none!important;border-bottom:1px solid var(--border)}
   .process-g{grid-template-columns:1fr}
-  .gal-masonry{grid-template-columns:1fr}
-  .gal-item:nth-child(1),.gal-item:nth-child(4){grid-row:span 1}
-  .hero-stats{flex-direction:column;gap:20px}
+  .gal-masonry{grid-template-columns:1fr;grid-auto-rows:240px}
+  .hero-stats{grid-template-columns:1fr;gap:0}
+  .hero-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:12px 0;margin:0}
+  .hero-stat:last-child{border-bottom:none}
+  .hero-stat:not(:first-child){padding-left:0}
+  .hero-heading{font-size:clamp(32px,10vw,44px)}
+  .hero-btn-main{width:100%;text-align:center}
+  .hero-btn-ghost{width:100%;justify-content:center}
+  .hero-actions{flex-direction:column}
   .logo-text span{display:none}
-  .nav-cta{font-size:10px;padding:0 10px;height:38px}
   .modal-body{padding:28px 24px}
-  .modal-title{font-size:22px}
+  .modal-title{font-size:24px}
+  .testi-grid{grid-template-columns:1fr}
+  .cform h2{font-size:26px}
 }
-@keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{opacity:0;animation:fadeInUp .6s ease forwards}
-.fade-up.d1{animation-delay:.1s}
-.fade-up.d2{animation-delay:.2s}
-.fade-up.d3{animation-delay:.3s}
-.fade-up.d4{animation-delay:.4s}
 </style>
 </head>
 <body>
@@ -357,11 +827,11 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
   <div class="nav-inner">
     <a href="#" class="logo-wrap">
       <div class="logo-icon">
-        <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+        <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
           <rect x="2" y="16" width="12" height="14" fill="#fff"/>
-          <polygon points="8,4 2,16 14,16" fill="rgba(255,255,255,0.6)"/>
+          <polygon points="8,4 2,16 14,16" fill="rgba(255,255,255,0.55)"/>
           <rect x="16" y="10" width="14" height="20" fill="#fff"/>
-          <polygon points="23,2 16,10 30,10" fill="rgba(255,255,255,0.6)"/>
+          <polygon points="23,2 16,10 30,10" fill="rgba(255,255,255,0.55)"/>
           <rect x="5" y="20" width="4" height="5" fill="#1a6b3c"/>
           <rect x="19" y="14" width="4" height="4" fill="#1a6b3c"/>
           <rect x="24" y="14" width="4" height="4" fill="#1a6b3c"/>
@@ -375,7 +845,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
     <ul class="nav-menu">
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li class="hd"><a href="#services">Services</a>
+      <li class="hd"><a href="#services">Services <span class="arr">▾</span></a>
         <div class="drop">
           <a href="#services">Built-in Cupboards</a>
           <a href="#services">Kitchens</a>
@@ -390,6 +860,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
         </div>
       </li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#videos">Videos</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -401,60 +872,113 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
     <a href="#about">About Us</a>
     <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
+    <a href="#videos">Videos</a>
     <a href="#process">Our Process</a>
     <a href="#contact">Contact</a>
     <a href="#contact" class="mob-cta">Get A Free Quote</a>
   </div>
 </nav>
 
+<!-- ═══════════════════════════════════
+     HERO — FULLY REDESIGNED
+════════════════════════════════════ -->
 <section id="hero" style="padding:0">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-tag fade-up">Zimbabwe's Interior Specialists</div>
-      <h1 class="fade-up d1">Spaces Designed<br>to <em>Inspire.</em></h1>
-      <p class="fade-up d2">From built-in cupboards and fitted kitchens to full office fitouts — we design and build premium interiors that transform homes and businesses across Zimbabwe.</p>
-      <div class="hero-btns fade-up d3">
-        <a href="#services" class="hero-btn-primary">Explore Our Work</a>
-        <a href="#contact" class="hero-btn-secondary">Free Consultation</a>
+  <div class="hero-bg">
+    <div class="hero-bg-img"></div>
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-bg-lines"></div>
+  </div>
+
+  <div class="hero-layout">
+    <!-- LEFT CONTENT -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        <span class="hero-eyebrow-text">Zimbabwe's Interior Specialists</span>
       </div>
-      <div class="hero-stats fade-up d4">
-        <div class="hero-stat"><span class="num">500+</span><span class="lbl">Projects Done</span></div>
-        <div class="hero-stat"><span class="num">8+</span><span class="lbl">Years Experience</span></div>
-        <div class="hero-stat"><span class="num">100%</span><span class="lbl">Custom Made</span></div>
+
+      <h1 class="hero-heading">
+        Spaces Designed<br>
+        to <em>Inspire</em> &amp;<br>
+        <span class="line-accent">Built to Last.</span>
+      </h1>
+
+      <p class="hero-body">
+        From fitted kitchens and built-in cupboards to full office fitouts — 
+        we design and build premium custom interiors that transform homes 
+        and businesses across Zimbabwe.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#services" class="hero-btn-main">Explore Our Work</a>
+        <a href="#contact" class="hero-btn-ghost">
+          Free Consultation
+          <svg viewBox="0 0 20 20" fill="none" width="16" height="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <path d="M4 10h12M11 5l5 5-5 5"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">500<span class="plus">+</span></div>
+          <div class="hero-stat-lbl">Projects Done</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">8<span class="plus">+</span></div>
+          <div class="hero-stat-lbl">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100<span class="plus">%</span></div>
+          <div class="hero-stat-lbl">Custom Made</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE COLLAGE -->
+    <div class="hero-right">
+      <img class="hero-img-main" src="kit.jpeg" alt="Fitted Kitchen by Dadiso">
+      <img class="hero-img-secondary" src="card.jpeg" alt="Built-in Cupboards">
+      <img class="hero-img-accent" src="b4.jpg" alt="Bedroom">
+      <div class="hero-badge">
+        <span class="hero-badge-num">500+</span>
+        <span class="hero-badge-lbl">Projects Complete</span>
       </div>
     </div>
   </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
 </section>
 
+
+<!-- ABOUT -->
 <section id="about">
   <div class="wrap">
     <div class="about-g">
-      <div class="about-img-wrap">
+      <div class="about-img-wrap reveal-left">
         <img class="about-img" src="mg1.jpeg" alt="Dadiso Workshop">
-        <div class="about-badge"><span class="big">8+</span><span class="sm">Years of Excellence</span></div>
+        <div class="about-badge">
+          <span class="big">8+</span>
+          <span class="sm">Years of Excellence</span>
+        </div>
       </div>
-      <div class="about-txt">
+      <div class="about-txt reveal-right">
         <span class="sec-eyebrow">About Dadiso Projects</span>
         <h2 class="sec-title">Zimbabwe's Trusted Interior &amp; Furniture Specialists</h2>
         <p>Dadiso Home and Office Projects has been transforming living and working spaces across Zimbabwe for over 8 years. We specialise in high-quality custom built-in solutions — from fitted kitchens and cupboards to full corporate office fitouts, exhibition stands, shop fittings and aluminium works.</p>
         <p>Every project is designed and built to your exact specifications, using premium materials and expert craftsmanship. We don't do off-the-shelf — everything we create is made specifically for you.</p>
         <div class="about-checks">
-          <div class="about-check">Free site visit and consultation</div>
-          <div class="about-check">100% custom, made-to-measure solutions</div>
-          <div class="about-check">Premium materials, guaranteed quality</div>
-          <div class="about-check">On-time delivery across Zimbabwe</div>
+          <div class="about-check"><div class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6"/></svg></div>Free site visit and consultation</div>
+          <div class="about-check"><div class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6"/></svg></div>100% custom, made-to-measure solutions</div>
+          <div class="about-check"><div class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6"/></svg></div>Premium materials, guaranteed quality</div>
+          <div class="about-check"><div class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-6"/></svg></div>On-time delivery across Zimbabwe</div>
         </div>
         <div class="about-tags">
-          <span class="about-tag">Built-in Cupboards</span>
-          <span class="about-tag">Kitchens</span>
-          <span class="about-tag">Bedrooms</span>
-          <span class="about-tag">Partitions</span>
-          <span class="about-tag">Aluminium Works</span>
-          <span class="about-tag">Office Furniture</span>
-          <span class="about-tag">Household Furniture</span>
-          <span class="about-tag">Roofing &amp; Ceiling</span>
-          <span class="about-tag">Shop Fittings</span>
-          <span class="about-tag">Exhibition Stands</span>
+          <span class="about-tag">Built-in Cupboards</span><span class="about-tag">Kitchens</span><span class="about-tag">Bedrooms</span><span class="about-tag">Partitions</span><span class="about-tag">Aluminium Works</span><span class="about-tag">Office Furniture</span><span class="about-tag">Household Furniture</span><span class="about-tag">Roofing &amp; Ceiling</span><span class="about-tag">Shop Fittings</span><span class="about-tag">Exhibition Stands</span>
         </div>
         <a href="#services" class="btn-green">View Our Services</a>
       </div>
@@ -462,212 +986,101 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
   </div>
 </section>
 
+
+<!-- SERVICES -->
 <section id="services">
   <div class="wrap">
     <div class="services-intro">
-      <div>
+      <div class="reveal">
         <span class="sec-eyebrow">What We Offer</span>
         <h2 class="sec-title">Our Services &amp; Pricing</h2>
-        <p class="sec-sub" style="max-width:440px">We specialise in: built-in cupboards, kitchens, bedrooms, partitions, aluminium works, office furniture, household furniture, roofing, ceiling &amp; designing, shop fittings — and many more carpentry works. We offer good service and quality work.</p>
+        <p class="sec-sub" style="max-width:440px">Built-in cupboards, kitchens, bedrooms, partitions, aluminium works, office &amp; household furniture, roofing, ceiling &amp; designing, shop fittings, exhibition stands — and many more carpentry works. We offer good service and quality work.</p>
       </div>
-      <div class="services-intro-right">
+      <div class="services-intro-right reveal delay-2">
         <a href="#contact" class="btn-outline">Request Custom Quote</a>
       </div>
     </div>
     <div class="prod-grid">
 
-      <div class="prod-card" onclick="openModal('cupboards')">
-        <div class="prod-img">
-          <img src="card.jpeg" alt="Built-in Cupboards">
-          <span class="prod-badge popular">Most Popular</span>
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Storage Solutions</span>
-          <h3 class="prod-title">🟢 Built-in Cupboards</h3>
-          <p class="prod-desc">Custom-fitted built-in cupboards designed to maximise your space. Any room, any size, any finish — built to last.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $350</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-1" onclick="openModal('cupboards')">
+        <div class="prod-img"><img src="card.jpeg" alt="Built-in Cupboards"><span class="prod-badge popular">Most Popular</span><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Storage Solutions</span><h3 class="prod-title">Built-in Cupboards</h3><p class="prod-desc">Custom-fitted built-in cupboards designed to maximise your space. Any room, any size, any finish — built to last.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $350</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
-      <div class="prod-card" onclick="openModal('kitchen')">
-        <div class="prod-img">
-          <img src="kit.jpeg" alt="Kitchen Fitting">
-          <span class="prod-badge">Premium</span>
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Kitchen Solutions</span>
-          <h3 class="prod-title">🟢 Kitchens</h3>
-          <p class="prod-desc">Full kitchen design and installation — modern units, worktops, splashbacks and finishes that completely transform your kitchen.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $800</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-2" onclick="openModal('kitchen')">
+        <div class="prod-img"><img src="kit.jpeg" alt="Kitchen Fitting"><span class="prod-badge">Premium</span><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Kitchen Solutions</span><h3 class="prod-title">Kitchens</h3><p class="prod-desc">Full kitchen design and installation — modern units, worktops, splashbacks and finishes that completely transform your kitchen.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $800</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
-      <div class="prod-card" onclick="openModal('bedroom')">
-        <div class="prod-img">
-          <img src="b4.jpg" alt="Bedroom Furniture">
-          <span class="prod-badge new">New Designs</span>
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Bedroom</span>
-          <h3 class="prod-title">🟢 Bedrooms</h3>
-          <p class="prod-desc">Bespoke wardrobes, headboards, bedside cabinets and dressing tables. Built to your exact style and dimensions.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $280</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-3" onclick="openModal('bedroom')">
+        <div class="prod-img"><img src="b4.jpg" alt="Bedroom Furniture"><span class="prod-badge new">New Designs</span><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Bedroom</span><h3 class="prod-title">Bedrooms</h3><p class="prod-desc">Bespoke wardrobes, headboards, bedside cabinets and dressing tables. Built to your exact style and dimensions.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $280</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
-      <div class="prod-card" onclick="openModal('partitions')">
-        <div class="prod-img">
-          <img src="mg9.jpeg" alt="Partitions">
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Space Division</span>
-          <h3 class="prod-title">🟢 Partitions</h3>
-          <p class="prod-desc">Wood, glass and aluminium partition systems for homes and offices. Clean, modern and professionally installed.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $200</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-1" onclick="openModal('partitions')">
+        <div class="prod-img"><img src="mg9.jpeg" alt="Partitions"><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Space Division</span><h3 class="prod-title">Partitions</h3><p class="prod-desc">Wood, glass and aluminium partition systems for homes and offices. Clean, modern and professionally installed.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $200</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
-      <div class="prod-card" onclick="openModal('aluminium')">
-        <div class="prod-img">
-          <img src="office.jpeg" alt="Aluminium Works">
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Aluminium &amp; Glass</span>
-          <h3 class="prod-title">🟢 Aluminium Works</h3>
-          <p class="prod-desc">Door frames, window frames, shopfronts, curtain walls and custom aluminium fabrication. Durable and low-maintenance.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $180</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-2" onclick="openModal('aluminium')">
+        <div class="prod-img"><img src="office.jpeg" alt="Aluminium Works"><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Aluminium &amp; Glass</span><h3 class="prod-title">Aluminium Works</h3><p class="prod-desc">Door frames, window frames, shopfronts, curtain walls and custom aluminium fabrication. Durable and low-maintenance.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $180</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
-      <div class="prod-card" onclick="openModal('office')">
-        <div class="prod-img">
-          <img src="work.jpeg" alt="Office Furniture">
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Office &amp; Commercial</span>
-          <h3 class="prod-title">🟢 Office Furniture</h3>
-          <p class="prod-desc">Desks, cabinets, reception counters and full office fitouts. Professional spaces that enhance productivity and impress clients.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $500</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-3" onclick="openModal('office')">
+        <div class="prod-img"><img src="work.jpeg" alt="Office Furniture"><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Office &amp; Commercial</span><h3 class="prod-title">Office Furniture</h3><p class="prod-desc">Desks, cabinets, reception counters and full office fitouts. Professional spaces that enhance productivity and impress clients.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $500</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
-      <div class="prod-card" onclick="openModal('household')">
-        <div class="prod-img">
-          <img src="mg6.jpeg" alt="Household Furniture">
-          <span class="prod-badge new">Custom Made</span>
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Home Living</span>
-          <h3 class="prod-title">🟢 Household Furniture</h3>
-          <p class="prod-desc">TV units, entertainment centres, display cabinets, lounge shelving and all living room furniture — made to your exact taste.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $220</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-1" onclick="openModal('household')">
+        <div class="prod-img"><img src="mg6.jpeg" alt="Household Furniture"><span class="prod-badge new">Custom Made</span><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Home Living</span><h3 class="prod-title">Household Furniture</h3><p class="prod-desc">TV units, entertainment centres, display cabinets, lounge shelving and all living room furniture — made to your exact taste.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $220</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
-      <div class="prod-card" onclick="openModal('ceiling')">
-        <div class="prod-img">
-          <img src="c1.jpg" alt="Ceiling & Roofing">
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Ceilings &amp; Roofing</span>
-          <h3 class="prod-title">🟢 Roofing &amp; Ceiling</h3>
-          <p class="prod-desc">PVC, gypsum, wooden and feature ceilings plus full roofing solutions — professionally designed and installed.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $15/m²</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-2" onclick="openModal('ceiling')">
+        <div class="prod-img"><img src="c1.jpg" alt="Ceiling & Roofing"><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Ceilings &amp; Roofing</span><h3 class="prod-title">Roofing &amp; Ceiling</h3><p class="prod-desc">PVC, gypsum, wooden and feature ceilings plus full roofing solutions — professionally designed and installed.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $15/m²</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
-      <div class="prod-card" onclick="openModal('shopfit')">
-        <div class="prod-img">
-          <img src="pp1.jpg" alt="Shop Fittings">
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Retail &amp; Commercial</span>
-          <h3 class="prod-title">🟢 Shop Fittings</h3>
-          <p class="prod-desc">Complete retail shop fit-outs — shelving, counters, display units and feature walls that make your products shine.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $450</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-3" onclick="openModal('shopfit')">
+        <div class="prod-img"><img src="pp1.jpg" alt="Shop Fittings"><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Retail &amp; Commercial</span><h3 class="prod-title">Shop Fittings</h3><p class="prod-desc">Complete retail shop fit-outs — shelving, counters, display units and feature walls that make your products shine.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $450</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
-      <div class="prod-card" onclick="openModal('exhibition')">
-        <div class="prod-img">
-          <img src="mg55.jpeg" alt="Exhibition Stands">
-          <span class="prod-badge" style="background:#7c3aed">Specialist</span>
-          <div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div>
-        </div>
-        <div class="prod-body">
-          <span class="prod-cat">Events &amp; Exhibitions</span>
-          <h3 class="prod-title">🟢 Exhibition Stands</h3>
-          <p class="prod-desc">Custom exhibition stands and display structures for trade shows, expos and events. Eye-catching, professional and reusable.</p>
-          <div class="prod-footer">
-            <div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $600</span></div>
-            <button class="prod-cta">Details</button>
-          </div>
-        </div>
+      <div class="prod-card reveal delay-2" onclick="openModal('exhibition')" style="grid-column:2">
+        <div class="prod-img"><img src="mg55.jpeg" alt="Exhibition Stands"><span class="prod-badge" style="background:#7c3aed">Specialist</span><div class="prod-overlay"><button class="prod-overlay-btn">View Details</button></div></div>
+        <div class="prod-body"><span class="prod-cat">Events &amp; Exhibitions</span><h3 class="prod-title">Exhibition Stands</h3><p class="prod-desc">Custom exhibition stands and display structures for trade shows, expos and events. Eye-catching, professional and reusable.</p><div class="prod-footer"><div class="prod-price"><span class="from">Starting from</span><span class="amount">USD $600</span></div><button class="prod-cta">Details</button></div></div>
       </div>
 
     </div>
   </div>
 </section>
 
+
+<!-- WHY US -->
 <section id="why">
   <div class="wrap">
-    <div class="sec-head center">
+    <div class="sec-head center reveal">
       <span class="sec-eyebrow">Why Choose Dadiso</span>
       <h2 class="sec-title">Built Different. Built Better.</h2>
     </div>
     <div class="why-g">
-      <div class="why-c">
+      <div class="why-c reveal delay-1">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
         <h3>Premium Quality</h3>
         <p>Top-grade materials and expert craftsmen on every project. We never compromise on quality — ever.</p>
       </div>
-      <div class="why-c">
+      <div class="why-c reveal delay-2">
         <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <h3>On-Time Delivery</h3>
         <p>We set realistic timelines and stick to them. Your project will be completed when we say it will be.</p>
       </div>
-      <div class="why-c">
+      <div class="why-c reveal delay-3">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Guaranteed Work</h3>
         <p>All our projects come with a workmanship guarantee. If something isn't right, we fix it — no questions.</p>
       </div>
-      <div class="why-c">
+      <div class="why-c reveal delay-4">
         <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>Dedicated Team</h3>
         <p>A dedicated project manager keeps you informed at every stage. Clear communication from quote to completion.</p>
@@ -676,57 +1089,148 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
   </div>
 </section>
 
+
+<!-- PROCESS -->
 <section id="process">
   <div class="wrap">
-    <div class="sec-head center" style="margin-bottom:64px">
+    <div class="sec-head center" style="margin-bottom:72px">
       <span class="sec-eyebrow" style="color:#a8d5b8">How It Works</span>
       <h2 class="sec-title" style="color:#fff">From Vision to Reality<br>in 4 Simple Steps</h2>
     </div>
     <div class="process-g">
-      <div class="process-step"><div class="step-num">01</div><h3>Free Consultation</h3><p>We visit your site, understand your needs and take measurements — completely free with no obligation.</p></div>
-      <div class="process-step"><div class="step-num">02</div><h3>Design &amp; Quote</h3><p>We create a detailed design and provide a transparent, itemised quotation for your approval.</p></div>
-      <div class="process-step"><div class="step-num">03</div><h3>Build &amp; Fabricate</h3><p>Our skilled craftsmen build your project to exact specifications using premium materials.</p></div>
-      <div class="process-step"><div class="step-num">04</div><h3>Install &amp; Handover</h3><p>We professionally install everything, clean up and hand over your beautiful finished space.</p></div>
+      <div class="process-connector"></div>
+      <div class="process-step reveal delay-1"><div class="step-num">01</div><h3>Free Consultation</h3><p>We visit your site, understand your needs and take measurements — completely free with no obligation.</p></div>
+      <div class="process-step reveal delay-2"><div class="step-num">02</div><h3>Design &amp; Quote</h3><p>We create a detailed design and provide a transparent, itemised quotation for your approval.</p></div>
+      <div class="process-step reveal delay-3"><div class="step-num">03</div><h3>Build &amp; Fabricate</h3><p>Our skilled craftsmen build your project to exact specifications using premium materials.</p></div>
+      <div class="process-step reveal delay-4"><div class="step-num">04</div><h3>Install &amp; Handover</h3><p>We professionally install everything, clean up and hand over your beautiful finished space.</p></div>
     </div>
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════
+     VIDEOS SECTION — NEW
+════════════════════════════════════ -->
+<section id="videos">
+  <div class="wrap">
+    <div class="videos-intro">
+      <div class="reveal">
+        <span class="sec-eyebrow">See Our Work in Action</span>
+        <h2 class="sec-title">Craftsmanship<br>on Camera</h2>
+        <p class="sec-sub" style="max-width:420px">Watch how we transform raw spaces into stunning, custom-built interiors. Real projects. Real craftsmanship. Real results.</p>
+      </div>
+      <div class="videos-intro-right reveal delay-2">
+        <p class="videos-intro-note">Every video showcases an actual Dadiso project — from concept to completion.</p>
+        <a href="#contact" class="btn-green" style="margin-top:8px">Start Your Project</a>
+      </div>
+    </div>
+
+    <div class="video-reel">
+
+      <!-- VIDEO 1 -->
+      <div class="video-wrap reveal delay-1" id="vw1" onclick="toggleVideo('v1','vw1')">
+        <span class="video-num">01</span>
+        <video id="v1" src="vidd.mp4" playsinline loop muted preload="metadata"></video>
+        <div class="video-play-overlay" id="vo1">
+          <div class="play-btn-circle">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="video-label">
+            Custom Interiors
+            <span class="video-label-small">Built-in Cupboards &amp; Kitchens</span>
+          </span>
+        </div>
+        <div class="video-meta">
+          <div class="video-meta-title">Interior Transformation</div>
+          <div class="video-meta-sub">Harare, Zimbabwe</div>
+        </div>
+      </div>
+
+      <!-- VIDEO 2 -->
+      <div class="video-wrap reveal delay-2" id="vw2" onclick="toggleVideo('v2','vw2')">
+        <span class="video-num">02</span>
+        <video id="v2" src="vid2.mp4" playsinline loop muted preload="metadata"></video>
+        <div class="video-play-overlay" id="vo2">
+          <div class="play-btn-circle">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="video-label">
+            Office Fitout
+            <span class="video-label-small">Commercial Project</span>
+          </span>
+        </div>
+        <div class="video-meta">
+          <div class="video-meta-title">Office Fitout</div>
+          <div class="video-meta-sub">Harare CBD</div>
+        </div>
+      </div>
+
+      <!-- VIDEO 3 -->
+      <div class="video-wrap reveal delay-3" id="vw3" onclick="toggleVideo('v3','vw3')">
+        <span class="video-num">03</span>
+        <video id="v3" src="vid.mp4" playsinline loop muted preload="metadata"></video>
+        <div class="video-play-overlay" id="vo3">
+          <div class="play-btn-circle">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="video-label">
+            Bedroom &amp; Living
+            <span class="video-label-small">Residential Project</span>
+          </span>
+        </div>
+        <div class="video-meta">
+          <div class="video-meta-title">Bedroom &amp; Living Room</div>
+          <div class="video-meta-sub">Borrowdale, Harare</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
 <section id="gallery">
   <div class="wrap">
-    <div class="sec-head center">
+    <div class="sec-head center reveal">
       <span class="sec-eyebrow">Our Work</span>
       <h2 class="sec-title">From Our Portfolio</h2>
       <p class="sec-sub">A selection of completed projects across Zimbabwe. Every image represents a real space we transformed.</p>
     </div>
     <div class="gal-masonry">
-      <div class="gal-item"><img src="kit.jpeg" alt="Kitchen"><div class="gal-item-ov"><span>Fitted Kitchen</span><small>Harare, Zimbabwe</small></div></div>
-      <div class="gal-item"><img src="card.jpeg" alt="Cupboards"><div class="gal-item-ov"><span>Built-in Cupboards</span><small>Bulawayo</small></div></div>
-      <div class="gal-item"><img src="b2.jpg" alt="Bedroom"><div class="gal-item-ov"><span>Bedroom Wardrobe</span><small>Harare</small></div></div>
-      <div class="gal-item"><img src="pp1.jpg" alt="Office"><div class="gal-item-ov"><span>Office Fitout</span><small>Harare CBD</small></div></div>
-      <div class="gal-item"><img src="pp3.png" alt="Shop"><div class="gal-item-ov"><span>Shop Fitting</span><small>Borrowdale</small></div></div>
-      <div class="gal-item"><img src="mg1.jpeg" alt="Exhibition"><div class="gal-item-ov"><span>Exhibition Stand</span><small>ZITF, Bulawayo</small></div></div>
+      <div class="gal-item reveal delay-1"><img src="kit.jpeg" alt="Kitchen"><div class="gal-item-ov"><span>Fitted Kitchen</span><small>Harare, Zimbabwe</small><span class="gal-view-btn">View ↗</span></div></div>
+      <div class="gal-item reveal delay-2"><img src="card.jpeg" alt="Cupboards"><div class="gal-item-ov"><span>Built-in Cupboards</span><small>Bulawayo</small><span class="gal-view-btn">View ↗</span></div></div>
+      <div class="gal-item reveal delay-3"><img src="b2.jpg" alt="Bedroom"><div class="gal-item-ov"><span>Bedroom Wardrobe</span><small>Harare</small><span class="gal-view-btn">View ↗</span></div></div>
+      <div class="gal-item reveal delay-1"><img src="pp1.jpg" alt="Office"><div class="gal-item-ov"><span>Office Fitout</span><small>Harare CBD</small><span class="gal-view-btn">View ↗</span></div></div>
+      <div class="gal-item reveal delay-2"><img src="pp3.png" alt="Shop"><div class="gal-item-ov"><span>Shop Fitting</span><small>Borrowdale</small><span class="gal-view-btn">View ↗</span></div></div>
+      <div class="gal-item reveal delay-3"><img src="mg1.jpeg" alt="Exhibition"><div class="gal-item-ov"><span>Exhibition Stand</span><small>ZITF, Bulawayo</small><span class="gal-view-btn">View ↗</span></div></div>
     </div>
   </div>
 </section>
 
+
+<!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="wrap">
-    <div class="sec-head center">
+    <div class="sec-head center reveal">
       <span class="sec-eyebrow">Client Reviews</span>
       <h2 class="sec-title">What Our Clients Say</h2>
     </div>
     <div class="testi-grid">
-      <div class="testi-card">
+      <div class="testi-card reveal delay-1">
+        <div class="testi-quote-mark">"</div>
         <div class="testi-stars">★★★★★</div>
         <p class="testi-qt">"Dadiso completely transformed our kitchen. The built-in cupboards are flawless — every detail was done with precision and care. The team was professional from start to finish."</p>
         <div class="testi-au"><div class="testi-av">TM</div><div><div class="testi-nm">Tatenda Moyo</div><div class="testi-rl">Homeowner, Harare</div></div></div>
       </div>
-      <div class="testi-card">
+      <div class="testi-card reveal delay-2">
+        <div class="testi-quote-mark">"</div>
         <div class="testi-stars">★★★★★</div>
         <p class="testi-qt">"We hired Dadiso for a full office fitout and the results exceeded our expectations. On time, within budget and the quality is outstanding. Our clients always comment on the office."</p>
         <div class="testi-au"><div class="testi-av">CN</div><div><div class="testi-nm">Chipo Nkomo</div><div class="testi-rl">Business Owner, Bulawayo</div></div></div>
       </div>
-      <div class="testi-card">
+      <div class="testi-card reveal delay-3">
+        <div class="testi-quote-mark">"</div>
         <div class="testi-stars">★★★★★</div>
         <p class="testi-qt">"The bedroom furniture Dadiso built is solid, beautiful and exactly what we envisioned. Great communication throughout. They genuinely care about the quality of their work."</p>
         <div class="testi-au"><div class="testi-av">RS</div><div><div class="testi-nm">Rumbi Sithole</div><div class="testi-rl">Client, Harare</div></div></div>
@@ -735,6 +1239,8 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
   </div>
 </section>
 
+
+<!-- CONTACT -->
 <section id="contact" style="padding:0">
   <div class="cmap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121066.4!2d31.0027!3d-17.8249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e706b17269%3A0xfc8c6a4c3c34b37d!2sHarare%2C%20Zimbabwe!5e0!3m2!1sen!2szw!4v1698000000" allowfullscreen loading="lazy"></iframe></div>
   <div class="cbody">
@@ -781,15 +1287,16 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
   </div>
 </section>
 
+
 <footer>
   <div class="wrap">
     <div class="footer-top">
       <div class="fb">
         <div class="fb-logo">
-          <div style="width:46px;height:46px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-            <svg viewBox="0 0 32 32" width="28" height="28" fill="none"><rect x="2" y="16" width="12" height="14" fill="#fff"/><polygon points="8,4 2,16 14,16" fill="rgba(255,255,255,0.6)"/><rect x="16" y="10" width="14" height="20" fill="#fff"/><polygon points="23,2 16,10 30,10" fill="rgba(255,255,255,0.6)"/></svg>
+          <div style="width:44px;height:44px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none"><rect x="2" y="16" width="12" height="14" fill="#fff"/><polygon points="8,4 2,16 14,16" fill="rgba(255,255,255,0.55)"/><rect x="16" y="10" width="14" height="20" fill="#fff"/><polygon points="23,2 16,10 30,10" fill="rgba(255,255,255,0.55)"/></svg>
           </div>
-          <div><strong style="font-size:15px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.5px;display:block">Dadiso Projects</strong><span style="font-size:10px;color:#4caf80;letter-spacing:1.5px;text-transform:uppercase">Home &amp; Office Solutions</span></div>
+          <div><strong style="font-size:14px;font-weight:700;color:#fff;letter-spacing:.3px;display:block">Dadiso Projects</strong><span style="font-size:9.5px;color:#4caf80;letter-spacing:1.5px;text-transform:uppercase">Home &amp; Office Solutions</span></div>
         </div>
         <p>Zimbabwe's trusted specialists in custom built-in cupboards, fitted kitchens, office furniture, exhibition stands, shop fittings and aluminium works. Over 500 projects completed nationwide.</p>
         <div class="fb-soc">
@@ -805,6 +1312,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#videos">Videos</a></li>
           <li><a href="#process">Our Process</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -826,7 +1334,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
       </div>
       <div class="fc fn">
         <h4>Newsletter</h4>
-        <p style="font-size:13.5px;color:rgba(255,255,255,.5);margin-bottom:18px;line-height:1.7">Get updates on our latest projects, design tips and special offers.</p>
+        <p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:18px;line-height:1.75">Get updates on our latest projects, design tips and special offers.</p>
         <input type="email" placeholder="Your email address" id="nlE">
         <a href="#" class="btn-green" onclick="nlS(event)">Subscribe</a>
       </div>
@@ -848,24 +1356,20 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
 </div>
 <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+<!-- MODAL -->
 <div class="modal-backdrop" id="modalBackdrop" onclick="closeModal()"></div>
 <div class="modal" id="modal">
   <button class="modal-close" onclick="closeModal()">✕</button>
   <div class="modal-inner">
     <div class="modal-img">
-      <div class="modal-img-main">
-        <img id="modalMainImg" src="" alt="">
-        <span class="modal-badge" id="modalBadge"></span>
-      </div>
+      <div class="modal-img-main"><img id="modalMainImg" src="" alt=""><span class="modal-badge" id="modalBadge"></span></div>
       <div class="modal-thumbs" id="modalThumbs"></div>
     </div>
     <div class="modal-body">
       <span class="modal-cat" id="modalCat"></span>
       <h2 class="modal-title" id="modalTitle"></h2>
       <div class="modal-rating"><span class="modal-stars">★★★★★</span><span id="modalReviews"></span></div>
-      <div class="modal-price-row">
-        <div class="modal-price"><span class="from">Starting from</span><span class="amount" id="modalPrice"></span></div>
-      </div>
+      <div class="modal-price-row"><div class="modal-price"><span class="from">Starting from</span><span class="amount" id="modalPrice"></span></div></div>
       <p class="modal-desc" id="modalDesc"></p>
       <div class="modal-features" id="modalFeatures"></div>
       <div class="modal-actions">
@@ -877,85 +1381,86 @@ footer{background:var(--dark);color:rgba(255,255,255,.65);padding:72px 0 0}
 </div>
 
 <script>
+/* ── NAV ── */
 const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
 ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open')});
 mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');mob.classList.remove('open')}));
+
+/* ── BACK TO TOP ── */
 const btt=document.getElementById('btt');
 window.addEventListener('scroll',()=>btt.classList.toggle('show',window.scrollY>400));
-function cSub(e){e.preventDefault();const ok=document.getElementById('cfOk');ok.classList.add('show');e.target.querySelectorAll('input,textarea,select').forEach(f=>f.value='');setTimeout(()=>ok.classList.remove('show'),6000);}
-function nlS(e){e.preventDefault();const v=document.getElementById('nlE').value;if(v){alert('Subscribed! Thank you.');document.getElementById('nlE').value='';}else alert('Please enter your email.');}
 
-const products={
-  cupboards:{
-    imgs:['card.jpeg','card1.jpeg','card2.jpeg','mg2.jpeg'],
-    badge:'Most Popular',cat:'Storage Solutions',title:'Built-in Cupboards',reviews:'(47 reviews)',price:'USD $350',
-    desc:'Our custom built-in cupboards are designed specifically for your space — maximising every centimetre. We design, fabricate and install in any room: bedrooms, lounges, studies, entrance halls and more. Available in a wide range of finishes including melamine, lacquered, wood grain, and high gloss.',
-    features:['Made-to-measure for your exact space','Wide range of finishes and colours','Soft-close hinges and drawer runners','Professional installation included','Internal fittings: rails, shelves, drawers','1-year workmanship guarantee']
-  },
-  kitchen:{
-    imgs:['kit.jpeg','k1.jpg','k2.jpg','k3.jpg'],
-    badge:'Premium',cat:'Kitchen Solutions',title:'Fitted Kitchens',reviews:'(38 reviews)',price:'USD $800',
-    desc:'A complete kitchen transformation from design to installation. We handle everything — units, worktops, splashbacks, handles, lighting and finishing touches. Our kitchens are built to last and designed to suit your cooking habits, family size and kitchen layout.',
-    features:['Full design consultation and 3D layout','Handleless and handled designs available','Granite, quartz or laminate worktops','Splashback tiles or glass options','Integrated appliance spaces','Plumbing-ready installation']
-  },
-  bedroom:{
-    imgs:['b1.jpg','b2.jpg','b3.jpg','b4.jpg'],
-    badge:'New Designs',cat:'Bedroom',title:'Bedroom Furniture',reviews:'(29 reviews)',price:'USD $280',
-    desc:'Bespoke bedroom furniture that transforms your room into a personal retreat. We build floor-to-ceiling wardrobes, walk-in closets, headboards, bedside units, dressing tables and TV units — all custom-designed for your exact bedroom dimensions and style preferences.',
-    features:['Floor-to-ceiling wardrobes','Walk-in closet designs available','Headboards in any shape or upholstery','Matching bedside tables and dressing tables','Mirror and lighting integration','Any finish: matte, gloss, wood grain']
-  },
-  partitions:{
-    imgs:['officee.jpeg','pp1.jpg','pp3.png','pp4.jpg'],
-    badge:'Flexible',cat:'Space Division',title:'Partitions & Dividers',reviews:'(24 reviews)',price:'USD $200',
-    desc:'Create functional, flexible spaces with our custom partition systems. Whether you need to divide an open office, create a private meeting room or separate a living and dining area — we install wood, glass and aluminium partition systems that look clean and professional.',
-    features:['Solid, glass or combination panels','Full-height and partial height options','Acoustic panels for privacy','Integrated doors and windows','Quick installation with minimal disruption','Relocatable modular systems']
-  },
-  aluminium:{
-    imgs:['mg9.jpeg','mg77.jpeg','mg11.jpeg','mg9.jpeg'],
-    badge:'Durable',cat:'Aluminium & Glass',title:'Aluminium Works',reviews:'(41 reviews)',price:'USD $180',
-    desc:'Professional aluminium fabrication and installation for homes and commercial properties. We supply and fit aluminium door frames, window frames, shopfronts, curtain walls, sliding doors and custom aluminium structures. Durable, low-maintenance and precision-engineered.',
-    features:['Powder-coated in any RAL colour','Sliding, folding and hinged doors','Single, double and toughened glazing','Shopfronts and curtain walling','Window frames — standard and custom','Weather-sealed and thermally broken']
-  },
-  office:{
-    imgs:['work.jpeg','office.jpg','officee.jpeg','pp4.jpg'],
-    badge:'Commercial',cat:'Office & Commercial',title:'Office Furniture & Fitouts',reviews:'(52 reviews)',price:'USD $500',
-    desc:'We transform offices into productive, professional environments. From reception counters and boardroom tables to open-plan workstations and executive offices — we design and build complete office fitouts that impress clients and motivate your team.',
-    features:['Reception counters and feature walls','Custom boardroom and meeting tables','Executive desks and pedestals','Cable management built in','Open-plan workstation systems','Filing, storage and security cabinets']
-  },
-  household:{
-    imgs:['mg99.jpeg','mg3.jpeg','mg2.jpeg','mg1.jpeg'],
-    badge:'Custom Made',cat:'Home Living',title:'Household Furniture',reviews:'(26 reviews)',price:'USD $220',
-    desc:'Beautiful, custom-made furniture for every room in your home. TV units, entertainment centres, display cabinets, lounge shelving, bar units, study shelves and more — all built to your exact measurements, style and finish preference.',
-    features:['TV units and entertainment centres','Display cabinets and shelving units','Bar units and feature sideboards','Floating wall shelves any size','Study and library shelving systems','Built to your exact dimensions & finish']
-  },
-  ceiling:{
-    imgs:['c1.jpg','c2.jpg','c3.jpg','c4.jpg'],
-    badge:'Finishing',cat:'Ceilings & Roofing',title:'Ceiling & Roofing',reviews:'(31 reviews)',price:'USD $15/m²',
-    desc:'Complete ceiling and roofing solutions for homes and commercial buildings. We install PVC, gypsum board, wooden and feature ceilings with lighting integration. Our roofing teams handle new installations and repairs across all roofing types.',
-    features:['PVC, gypsum and wooden ceilings','Feature ceilings with lighting cutouts','Suspended ceiling grid systems','Cornices and decorative finishes','Roof installations and repairs','Waterproofing and insulation']
-  },
-  shopfit:{
-    imgs:['pp1.jpg','pp2.jpg','pp3.ppg','pp4.jpg'],
-    badge:'Retail',cat:'Retail & Commercial',title:'Shop Fittings',reviews:'(33 reviews)',price:'USD $450',
-    desc:'A well-fitted shop sells more. We design and build complete retail fitouts — shelving systems, display counters, feature walls, till points, stock rooms and window displays. We have fitted shops across Zimbabwe from boutiques to pharmacies to supermarkets.',
-    features:['Custom display shelving systems','Glass display counters and cases','Feature walls and brand displays','Till point and checkout counters','Stock room shelving and storage','Window display structures']
-  },
-  exhibition:{
-    imgs:['mg55.jpeg','dd3.jpeg','cc4.jpeg','table.jpeg'],
-    badge:'Specialist',cat:'Events & Exhibitions',title:'Exhibition Stands',reviews:'(18 reviews)',price:'USD $600',
-    desc:'Stand out at trade shows, expos and corporate events with a custom exhibition stand built by Dadiso. We design and construct eye-catching display structures that showcase your brand professionally — modular for reuse, or bespoke for a single event.',
-    features:['Custom branded display structures','Modular and reusable designs','Integrated product display areas','Built-in lighting options','Branded graphics and signage panels','Fast turnaround for event deadlines']
+/* ── SCROLL REVEAL ── */
+const revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(el=>revealObserver.observe(el));
+
+/* ── VIDEO TOGGLE ── */
+function toggleVideo(videoId, wrapId){
+  const vid=document.getElementById(videoId);
+  const wrap=document.getElementById(wrapId);
+  const overlay=document.getElementById('v'+videoId.replace('v','')+'o'.replace('vv','vo'));
+  
+  // find the overlay inside the wrap
+  const ov=wrap.querySelector('.video-play-overlay');
+  
+  if(vid.paused){
+    // pause all others first
+    ['v1','v2','v3'].forEach(id=>{
+      if(id!==videoId){
+        const v=document.getElementById(id);
+        const w=document.getElementById('vw'+id.replace('v',''));
+        v.pause();
+        if(w)w.classList.remove('playing');
+      }
+    });
+    vid.muted=false;
+    vid.play().catch(()=>{vid.muted=true;vid.play()});
+    wrap.classList.add('playing');
+  } else {
+    vid.pause();
+    wrap.classList.remove('playing');
   }
+}
+
+/* ── FORM ── */
+function cSub(e){
+  e.preventDefault();
+  const ok=document.getElementById('cfOk');
+  ok.classList.add('show');
+  e.target.querySelectorAll('input,textarea,select').forEach(f=>f.value='');
+  setTimeout(()=>ok.classList.remove('show'),6000);
+}
+function nlS(e){
+  e.preventDefault();
+  const v=document.getElementById('nlE').value;
+  if(v){alert('Subscribed! Thank you.');document.getElementById('nlE').value='';}
+  else alert('Please enter your email.');
+}
+
+/* ── PRODUCTS DATA ── */
+const products={
+  cupboards:{imgs:['card.jpeg','card1.jpeg','card2.jpeg','mg2.jpeg'],badge:'Most Popular',cat:'Storage Solutions',title:'Built-in Cupboards',reviews:'(47 reviews)',price:'USD $350',desc:'Our custom built-in cupboards are designed specifically for your space — maximising every centimetre. We design, fabricate and install in any room: bedrooms, lounges, studies, entrance halls and more. Available in a wide range of finishes including melamine, lacquered, wood grain, and high gloss.',features:['Made-to-measure for your exact space','Wide range of finishes and colours','Soft-close hinges and drawer runners','Professional installation included','Internal fittings: rails, shelves, drawers','1-year workmanship guarantee']},
+  kitchen:{imgs:['kit.jpeg','k1.jpg','k2.jpg','k3.jpg'],badge:'Premium',cat:'Kitchen Solutions',title:'Fitted Kitchens',reviews:'(38 reviews)',price:'USD $800',desc:'A complete kitchen transformation from design to installation. We handle everything — units, worktops, splashbacks, handles, lighting and finishing touches. Our kitchens are built to last and designed to suit your cooking habits, family size and kitchen layout.',features:['Full design consultation and 3D layout','Handleless and handled designs available','Granite, quartz or laminate worktops','Splashback tiles or glass options','Integrated appliance spaces','Plumbing-ready installation']},
+  bedroom:{imgs:['b1.jpg','b2.jpg','b3.jpg','b4.jpg'],badge:'New Designs',cat:'Bedroom',title:'Bedroom Furniture',reviews:'(29 reviews)',price:'USD $280',desc:'Bespoke bedroom furniture that transforms your room into a personal retreat. We build floor-to-ceiling wardrobes, walk-in closets, headboards, bedside units, dressing tables and TV units — all custom-designed for your exact bedroom dimensions and style preferences.',features:['Floor-to-ceiling wardrobes','Walk-in closet designs available','Headboards in any shape or upholstery','Matching bedside tables and dressing tables','Mirror and lighting integration','Any finish: matte, gloss, wood grain']},
+  partitions:{imgs:['officee.jpeg','pp1.jpg','pp3.png','pp4.jpg'],badge:'Flexible',cat:'Space Division',title:'Partitions & Dividers',reviews:'(24 reviews)',price:'USD $200',desc:'Create functional, flexible spaces with our custom partition systems. Whether you need to divide an open office, create a private meeting room or separate a living and dining area — we install wood, glass and aluminium partition systems that look clean and professional.',features:['Solid, glass or combination panels','Full-height and partial height options','Acoustic panels for privacy','Integrated doors and windows','Quick installation with minimal disruption','Relocatable modular systems']},
+  aluminium:{imgs:['mg9.jpeg','mg77.jpeg','mg11.jpeg','mg9.jpeg'],badge:'Durable',cat:'Aluminium & Glass',title:'Aluminium Works',reviews:'(41 reviews)',price:'USD $180',desc:'Professional aluminium fabrication and installation for homes and commercial properties. We supply and fit aluminium door frames, window frames, shopfronts, curtain walls, sliding doors and custom aluminium structures. Durable, low-maintenance and precision-engineered.',features:['Powder-coated in any RAL colour','Sliding, folding and hinged doors','Single, double and toughened glazing','Shopfronts and curtain walling','Window frames — standard and custom','Weather-sealed and thermally broken']},
+  office:{imgs:['work.jpeg','office.jpg','officee.jpeg','pp4.jpg'],badge:'Commercial',cat:'Office & Commercial',title:'Office Furniture & Fitouts',reviews:'(52 reviews)',price:'USD $500',desc:'We transform offices into productive, professional environments. From reception counters and boardroom tables to open-plan workstations and executive offices — we design and build complete office fitouts that impress clients and motivate your team.',features:['Reception counters and feature walls','Custom boardroom and meeting tables','Executive desks and pedestals','Cable management built in','Open-plan workstation systems','Filing, storage and security cabinets']},
+  household:{imgs:['mg99.jpeg','mg3.jpeg','mg2.jpeg','mg1.jpeg'],badge:'Custom Made',cat:'Home Living',title:'Household Furniture',reviews:'(26 reviews)',price:'USD $220',desc:'Beautiful, custom-made furniture for every room in your home. TV units, entertainment centres, display cabinets, lounge shelving, bar units, study shelves and more — all built to your exact measurements, style and finish preference.',features:['TV units and entertainment centres','Display cabinets and shelving units','Bar units and feature sideboards','Floating wall shelves any size','Study and library shelving systems','Built to your exact dimensions & finish']},
+  ceiling:{imgs:['c1.jpg','c2.jpg','c3.jpg','c4.jpg'],badge:'Finishing',cat:'Ceilings & Roofing',title:'Ceiling & Roofing',reviews:'(31 reviews)',price:'USD $15/m²',desc:'Complete ceiling and roofing solutions for homes and commercial buildings. We install PVC, gypsum board, wooden and feature ceilings with lighting integration. Our roofing teams handle new installations and repairs across all roofing types.',features:['PVC, gypsum and wooden ceilings','Feature ceilings with lighting cutouts','Suspended ceiling grid systems','Cornices and decorative finishes','Roof installations and repairs','Waterproofing and insulation']},
+  shopfit:{imgs:['pp1.jpg','pp2.jpg','pp3.png','pp4.jpg'],badge:'Retail',cat:'Retail & Commercial',title:'Shop Fittings',reviews:'(33 reviews)',price:'USD $450',desc:'A well-fitted shop sells more. We design and build complete retail fitouts — shelving systems, display counters, feature walls, till points, stock rooms and window displays. We have fitted shops across Zimbabwe from boutiques to pharmacies to supermarkets.',features:['Custom display shelving systems','Glass display counters and cases','Feature walls and brand displays','Till point and checkout counters','Stock room shelving and storage','Window display structures']},
+  exhibition:{imgs:['mg55.jpeg','dd3.jpeg','cc4.jpeg','table.jpeg'],badge:'Specialist',cat:'Events & Exhibitions',title:'Exhibition Stands',reviews:'(18 reviews)',price:'USD $600',desc:'Stand out at trade shows, expos and corporate events with a custom exhibition stand built by Dadiso. We design and construct eye-catching display structures that showcase your brand professionally — modular for reuse, or bespoke for a single event.',features:['Custom branded display structures','Modular and reusable designs','Integrated product display areas','Built-in lighting options','Branded graphics and signage panels','Fast turnaround for event deadlines']}
 };
 
 function switchImg(src,el){
   const img=document.getElementById('modalMainImg');
   img.classList.add('fading');
-  setTimeout(()=>{img.src=src;img.classList.remove('fading');},200);
+  setTimeout(()=>{img.src=src;img.classList.remove('fading');},220);
   document.querySelectorAll('.modal-thumb').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
 }
-
 function openModal(id){
   const p=products[id];if(!p)return;
   document.getElementById('modalMainImg').src=p.imgs[0];
