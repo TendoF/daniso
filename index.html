@@ -666,18 +666,18 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 0 0}
 /* ─── MODAL ─── */
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9000;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(6px)}
 .modal-backdrop.open{opacity:1;pointer-events:all}
-.modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-48%) scale(.95);z-index:9001;background:#fff;width:min(940px,95vw);max-height:92vh;overflow-y:auto;opacity:0;pointer-events:none;transition:all .38s cubic-bezier(.16,1.2,.3,1);border-radius:6px;overflow:hidden}
+.modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-48%) scale(.95);z-index:9001;background:#fff;width:min(940px,95vw);max-height:92vh;opacity:0;pointer-events:none;transition:all .38s cubic-bezier(.16,1.2,.3,1);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
 .modal.open{opacity:1;pointer-events:all;transform:translate(-50%,-50%) scale(1)}
-.modal-inner{display:grid;grid-template-columns:1fr 1fr}
-.modal-img{position:relative;overflow:hidden;display:flex;flex-direction:column;background:#111}
-.modal-img-main{flex:1;min-height:360px;overflow:hidden;position:relative}
+.modal-inner{display:grid;grid-template-columns:1fr 1fr;flex:1;min-height:0;overflow:hidden}
+.modal-img{position:relative;overflow:hidden;display:flex;flex-direction:column;background:#111;max-height:92vh}
+.modal-img-main{flex:1;min-height:260px;overflow:hidden;position:relative}
 .modal-img-main img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .25s}
 .modal-img-main img.fading{opacity:0}
 .modal-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:4px;background:#080808;flex-shrink:0}
 .modal-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:pointer;opacity:.35;border:2px solid transparent;transition:all .25s;display:block}
 .modal-thumb.active,.modal-thumb:hover{opacity:1;border-color:var(--green)}
 .modal-badge{position:absolute;top:16px;left:16px;background:var(--green);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;z-index:2;border-radius:2px}
-.modal-body{padding:44px 40px;display:flex;flex-direction:column}
+.modal-body{padding:44px 40px;display:flex;flex-direction:column;overflow-y:auto;max-height:92vh}
 .modal-cat{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:10px}
 .modal-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#111;line-height:1.15;margin-bottom:14px;letter-spacing:-.3px}
 .modal-rating{display:flex;align-items:center;gap:6px;margin-bottom:18px}
@@ -818,7 +818,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 0 0}
     <div class="topbar-right">
       <div class="tb-item"><div><span class="tb-lbl">Call Us</span><span class="tb-val"><a href="tel:+263780000000">+263 78 000 0000</a></span></div></div>
       <div class="tb-item"><div><span class="tb-lbl">Hours</span><span class="tb-val">Mon–Sat: 8AM–5PM</span></div></div>
-      <div class="tb-item"><div><span class="tb-lbl">Email</span><span class="tb-val"><a href="mailto:info@dadisoprojects.co.zw">info@dadisoprojects.co.zw</a></span></div></div>
+      <div class="tb-item"><div><span class="tb-lbl">Email</span><span class="tb-val"><a href="/cdn-cgi/l/email-protection#a8c1c6cec7e8ccc9ccc1dbc7d8dac7c2cdcbdcdb86cbc786d2df"><span class="__cf_email__" data-cfemail="a8c1c6cec7e8ccc9ccc1dbc7d8dac7c2cdcbdcdb86cbc786d2df">[email&#160;protected]</span></a></span></div></div>
     </div>
   </div>
 </div>
@@ -1130,7 +1130,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 0 0}
       <!-- VIDEO 1 -->
       <div class="video-wrap reveal delay-1" id="vw1" onclick="toggleVideo('v1','vw1')">
         <span class="video-num">01</span>
-        <video id="v1" src="vidd.mp4" playsinline loop muted preload="metadata"></video>
+        <video id="v1" src="vid1.mp4" playsinline loop muted preload="metadata"></video>
         <div class="video-play-overlay" id="vo1">
           <div class="play-btn-circle">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -1168,7 +1168,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 0 0}
       <!-- VIDEO 3 -->
       <div class="video-wrap reveal delay-3" id="vw3" onclick="toggleVideo('v3','vw3')">
         <span class="video-num">03</span>
-        <video id="v3" src="vid.mp4" playsinline loop muted preload="metadata"></video>
+        <video id="v3" src="vid3.mp4" playsinline loop muted preload="metadata"></video>
         <div class="video-play-overlay" id="vo3">
           <div class="play-btn-circle">
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -1275,7 +1275,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 0 0}
       <p>We'd love to hear about your project. Reach us any way that suits you.</p>
       <div class="ci"><div class="ci-dot">📍</div><div><span class="ci-lbl">Location</span><span class="ci-txt">Harare, Zimbabwe<br>Serving nationwide</span></div></div>
       <div class="ci"><div class="ci-dot">📞</div><div><span class="ci-lbl">Call Us</span><span class="ci-txt"><a href="tel:+263780000000">+263 78 000 0000</a></span></div></div>
-      <div class="ci"><div class="ci-dot">✉</div><div><span class="ci-lbl">Email</span><span class="ci-txt"><a href="mailto:info@dadisoprojects.co.zw">info@dadisoprojects.co.zw</a></span></div></div>
+      <div class="ci"><div class="ci-dot">✉</div><div><span class="ci-lbl">Email</span><span class="ci-txt"><a href="/cdn-cgi/l/email-protection#e78e898188a78386838e94889795888d82849394c98488c99d90"><span class="__cf_email__" data-cfemail="0e676068614e6a6f6a677d617e7c61646b6d7a7d206d61207479">[email&#160;protected]</span></a></span></div></div>
       <div class="ci"><div class="ci-dot">W</div><div><span class="ci-lbl">WhatsApp</span><span class="ci-txt"><a href="https://wa.me/263780000000" target="_blank">Chat with us now</a></span></div></div>
       <div class="cpanel-hours">
         <h4>Business Hours</h4>
@@ -1302,7 +1302,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 0 0}
         <div class="fb-soc">
           <a href="https://facebook.com" target="_blank">f</a>
           <a href="https://wa.me/263780000000" target="_blank">W</a>
-          <a href="mailto:info@dadisoprojects.co.zw">✉</a>
+          <a href="/cdn-cgi/l/email-protection#f79e999198b79396939e84988785989d92948384d99498d98d80">✉</a>
         </div>
       </div>
       <div class="fc">
@@ -1380,7 +1380,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:72px 0 0}
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── NAV ── */
 const ham=document.getElementById('ham'),mob=document.getElementById('mobMenu');
 ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open')});
